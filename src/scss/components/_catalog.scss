@@ -18,6 +18,12 @@
     flex-direction: column;
     overflow: hidden;
 
+    &:hover {
+        .card__image {
+            transform: scale(1.2);
+        }
+    }
+
     &--rare {
         border: 1px solid rgba(11, 112, 144, 0.5);
         
@@ -76,6 +82,10 @@
 
     &__image-wrap {
         text-align: center;
+
+        .card__image {
+            transition: transform ease-in-out .4s;
+        }
     }
 
     &__info {
@@ -120,11 +130,60 @@
         height: 40px;
         border-radius: 50%;
         background-color: var(--orange);
+        transition: all ease-in-out .4s;
 
         .icon {
             width: 19px;
             height: 19px;
             fill: var(--grey);
+            transition: transform ease-in-out .4s;
+        }
+
+        &:hover {
+            .icon {
+                transform: scale(1.1);
+            }
         }
     }
+
+    &--rare {
+        .card__buy {
+            &:hover {
+                background-color: #0b7090;
+            }
+        }
+    }
+
+    &--uncommon {
+        .card__buy {
+            &:hover {
+                background-color: #cb4546;
+            }
+        }
+    }
+
+    &--legendary {
+        .card__buy {
+            &:hover {
+                background-color: #ff5d39;
+            }
+        }
+    }
+
+    &--common {
+        .card__buy {
+            &:hover {
+                background-color: #696b77;
+            }
+        }
+    }
+
+    &--epic {
+        .card__buy {
+            &:hover {
+                background-color: #67409a;
+            }
+        }
+    }
+    
 }

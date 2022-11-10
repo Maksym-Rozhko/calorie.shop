@@ -6,23 +6,23 @@ import { enableScroll } from '../functions/enable-scroll';
   const menu = document?.querySelector('[data-menu]');
   const menuItems = document?.querySelectorAll('[data-menu-item]');
   const overlay = document?.querySelector('[data-menu-overlay]');
-  const mainPageContainer = document.querySelector('main.main');
+  const bodyTagElem = document.querySelector('body');
 
 
   burger?.addEventListener('click', (e) => {
     burger?.classList.toggle('burger--active');
     menu?.classList.toggle('menu--active');
-    mainPageContainer?.classList.toggle('sidebar-offset');
+    bodyTagElem?.classList.toggle('sidebar-offset');
     
 
     if (menu?.classList.contains('menu--active')) {
       burger?.setAttribute('aria-expanded', 'true');
       burger?.setAttribute('aria-label', 'Закрыть меню');
-      disableScroll();
+      // disableScroll();
     } else {
       burger?.setAttribute('aria-expanded', 'false');
       burger?.setAttribute('aria-label', 'Открыть меню');
-      enableScroll();
+      // enableScroll();
     }
   });
 
@@ -31,8 +31,8 @@ import { enableScroll } from '../functions/enable-scroll';
     burger?.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
-    mainPageContainer.classList.remove('sidebar-offset');
-    enableScroll();
+    bodyTagElem.classList.remove('sidebar-offset');
+    // enableScroll();
   });
 
   menuItems?.forEach(el => {
@@ -41,8 +41,8 @@ import { enableScroll } from '../functions/enable-scroll';
       burger?.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
-      mainPageContainer.classList.remove('sidebar-offset');
-      enableScroll();
+      bodyTagElem.classList.remove('sidebar-offset');
+      // enableScroll();
     });
   });
 })();

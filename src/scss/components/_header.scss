@@ -1,11 +1,117 @@
+body.sidebar-offset {
+    .header {
+        margin-left: 285px;
+        margin-right: 30px;
+    }  
+  }
+
 .header {
     background-color: transparent;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 111;
+    z-index: 1;
     cursor: default;
+    margin-left: 0;
+    transition: all ease-in-out .4s;
+
+
+    &__container {
+        @include flex-all-sb;
+        padding-top: 30px;
+        padding-bottom: 15px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            border-bottom: 1px solid var(--grey);
+            opacity: .1;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: var(--grey);
+        margin-top: 0;
+        margin-bottom: 0;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            left: 0;
+            bottom: -20px;
+            border-bottom: 1px solid var(--orange);
+        }
+    }
+
+    .profile {
+
+        &__wrap {
+            @include flex-v-center;
+            padding-right: 14px;
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                opacity: 1;
+                border-style: solid;
+                border-width: 5px 4px 0 4px;
+                border-color: var(--cs-grey) transparent transparent transparent;
+                right: 0;
+                bottom: 6px;
+                transform: rotate(0deg);
+                transition: all ease-in-out .4s;
+            }
+        
+            &:hover {
+                &::before {
+                    border-color: var(--orange) transparent transparent transparent;
+                }
+            }
+        }
+
+        &__avatar {
+            border: 1px solid var(--orange);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px; 
+            @include flex-all-center;
+
+            .avatar {
+                max-width: 38px;
+            }
+        }
+
+        &__name {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -0.03em;    
+            color: var(--grey);
+        }
+
+        &__mail {
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 15px;
+            display: block;
+            color: var(--cs-grey);
+        }
+    }
 
     .burger {
         @include burger;
@@ -16,6 +122,6 @@
     }
 }
 
-.header.active-scroll {
-    background-color: var(--cs-grey);
-}
+// .header.active-scroll {
+//     background-color: var(--cs-grey);
+// }

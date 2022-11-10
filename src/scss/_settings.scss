@@ -69,17 +69,23 @@ a {
 .main {
   position: relative;
   margin-top: 140px;
+  margin-bottom: 40px;
   transition: all ease-in-out .4s;
-
-  &.sidebar-offset {
-    margin-left: 285px;
-  }
   margin-left: 0;
+}
 
+body {
   &:not(.sidebar-offset) {
     .wrapper {
       max-width: 1800px;
     }
+  }
+}
+
+.sidebar-offset {
+  .main {
+    margin-left: 285px;
+    margin-right: 30px;
   }
 }
 

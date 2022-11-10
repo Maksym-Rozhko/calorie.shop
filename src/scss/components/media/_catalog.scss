@@ -1,0 +1,112 @@
+@include big-desktop {
+    .catalog {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .sidebar-offset {
+        .catalog {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+@include tablet {
+    .catalog {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .sidebar-offset {
+        .catalog {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@include middle-tablet {
+    .catalog {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .sidebar-offset {
+        .catalog {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@include middle-tablet {
+    .catalog {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .sidebar-offset {
+        .catalog {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@include small-tablet {
+    .catalog {
+        gap: 20px 15px;
+    }
+    .card {
+        &__info {
+            padding: 10px;
+        }
+        &__labels {
+            &-label {
+                padding: 5px 8px;
+            }
+        }
+        &__price {
+            font-size: 14px;
+        }
+    }
+}
+
+@include mobile {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sidebar-offset {
+        .catalog {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .card {
+        min-height: 250px;
+
+        &__status {
+            font-size: 11px;
+            padding: 5px;
+        }
+        &__info {
+            padding-top: 8px;
+        }
+        &__labels {
+            gap: 8px;
+            margin-bottom: 12px;
+            &-label {
+                font-size: 11px;
+            }
+        }
+        &__price {
+            font-size: 13px;
+        }
+        &__buy {
+            width: 30px;
+            height: 30px;
+
+            .icon {
+                width: 13px;
+                height: 13px;
+            }
+        }
+        &__image {
+            max-width: 100px;
+        }
+    }
+}
+
+@include small-mobile {
+    .card {
+        min-height: 212px;
+    }
+}

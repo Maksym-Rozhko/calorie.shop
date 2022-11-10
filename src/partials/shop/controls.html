@@ -16,14 +16,18 @@
     </div>
     <div class="controls__right">
         <div class="controls__select">
-            <select class="js-example-basic-single" name="state">
-                <option value="AL">Alabama</option>
-                    ...
-                <option value="WY">Wyoming</option>
+            <select class="js-example-basic-single" name="filter">
+                <option value="0">Higher price first</option>
+                <option value="1">Min price first</option>
+                <option value="2">Something else</option>
             </select>
         </div>
         <div class="filter">
-
+            <button class="btn-reset controls__filter" type="button">
+                <svg class="icon">
+                    <use xlink:href="images/sprite.svg#filter"></use>
+                </svg>
+            </button>
         </div>
     </div>
 </div>

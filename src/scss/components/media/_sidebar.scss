@@ -1,0 +1,36 @@
+@include small-tablet {
+    .sidebar-offset {
+        .main {
+          margin-left: inherit;
+          margin-right: inherit;
+        }
+    }
+    .sidebar {
+        top: 0;
+        border-radius: 0;
+        height: 100vh;
+        background: var(--dark);
+
+        .burger {
+            border-radius: 10px 0px 0px 10px;
+            width: 20px;
+            height: 35px;
+            background-color: var(--orange);
+
+            &::before {
+                border-color: var(--dark) transparent transparent transparent;
+            }
+
+            &:hover {
+                &::before {
+                    border-color: var(--cs-white) transparent transparent transparent;
+                }
+            }
+        }
+    }
+    .overlay.menu--active {
+        .sidebar {
+            left: 0;
+        }
+    }
+}

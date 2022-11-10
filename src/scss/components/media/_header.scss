@@ -1,3 +1,50 @@
-@include mobile {
+@include small-tablet {
+    body.sidebar-offset {
+        .header {
+            margin-left: inherit;
+            margin-right: inherit;
+        }  
+    }
+}
 
+@include mobile {
+    .header {
+        padding: 16px 0;
+        &__container {
+            padding: 0;
+
+            &::before {
+                content: none;
+            }
+        }
+        &__title {
+            display: none;
+        }
+        .profile {
+            &__wrap {
+                padding-right: 0;
+                &::before {
+                    content: none;
+                }
+            }
+            &__info {
+                display: none;
+            }
+            &__avatar {
+                margin-right: 0;
+                width: 24px;
+                height: 24px;
+
+                .avatar {
+                    max-width: 22px;
+                }
+            }
+        }
+        .coins {
+            display: block;
+        }
+        &__mobile-top {
+            @include flex-all-sb;
+        }
+    }
 }

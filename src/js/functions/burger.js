@@ -8,6 +8,11 @@ import { enableScroll } from '../functions/enable-scroll';
   const overlay = document?.querySelector('[data-menu-overlay]');
   const bodyTagElem = document.querySelector('body');
 
+  if (window.innerWidth < 768) {
+    burger?.classList.remove('burger--active');
+    menu?.classList.remove('menu--active');
+    bodyTagElem?.classList.remove('sidebar-offset');
+  } 
 
   burger?.addEventListener('click', (e) => {
     burger?.classList.toggle('burger--active');

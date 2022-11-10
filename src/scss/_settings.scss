@@ -126,3 +126,22 @@ body {
   border: 1px solid rgba(255,255,255, .2);
 }
 ::-webkit-scrollbar-thumb:vertical:hover {background:var(--cs-main);}
+
+@include large-desktop {
+  .wrapper {
+      width: 95%;
+  }
+}
+
+@include tablet {
+  .wrapper {
+    width: 100%;
+    padding: 0 25px;
+  }
+}
+
+@include mobile {
+  .main {
+    margin-top: 100px;
+  }
+}

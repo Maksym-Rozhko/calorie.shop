@@ -120,6 +120,55 @@ body.sidebar-offset {
     .mobile-menu {
         @include mobile-menu;
     }
+
+    .coins {
+        display: none;
+        background: rgba(234, 235, 240, 0.05);
+        border-radius: 43px;
+        min-width: 47px;
+        padding: 3px 9px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-image: url('../images/icon/coins.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            right: 2px;
+            transform: translateY(-50%);
+        }
+        
+        &__amount {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: var(--cs-grey);
+            padding-right: 19px;
+        }
+    }
+
+    &__mobile-top {
+        display: none;
+        margin-bottom: 16px;
+
+        .time {
+            font-weight: 400;
+            font-size: 10.7165px;
+            line-height: 13px;
+            letter-spacing: -0.035em;
+            color: var(--cs-white);
+        }
+
+        .mobile-info {
+            @include flex-v-center;
+            gap: 10px;
+        }
+    }
 }
 
 // .header.active-scroll {

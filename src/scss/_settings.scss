@@ -13,9 +13,8 @@ body {
   font-size: 16px;
   line-height: 19px;
   background-color: var(--cs-body-bg);
-  color: var(--cs-light);
+  color: var(--grey);
   overflow-x: hidden;
-  cursor: none;
 }
 
 img {
@@ -69,13 +68,26 @@ a {
 
 .main {
   position: relative;
+  margin-top: 140px;
+  transition: all ease-in-out .4s;
+
+  &.sidebar-offset {
+    margin-left: 285px;
+  }
+  margin-left: 0;
+
+  &:not(.sidebar-offset) {
+    .wrapper {
+      max-width: 1800px;
+    }
+  }
 }
 
 .wrapper {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
-  width: 95%;
+  width: 100%;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

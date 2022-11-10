@@ -6,13 +6,13 @@ import { enableScroll } from '../functions/enable-scroll';
   const menu = document?.querySelector('[data-menu]');
   const menuItems = document?.querySelectorAll('[data-menu-item]');
   const overlay = document?.querySelector('[data-menu-overlay]');
-  const navigationBackground = document.querySelector('.navigation-bg');
+  const mainPageContainer = document.querySelector('main.main');
 
 
   burger?.addEventListener('click', (e) => {
     burger?.classList.toggle('burger--active');
     menu?.classList.toggle('menu--active');
-    navigationBackground?.classList.toggle('navigation-bg__active');
+    mainPageContainer?.classList.toggle('sidebar-offset');
     
 
     if (menu?.classList.contains('menu--active')) {
@@ -31,7 +31,7 @@ import { enableScroll } from '../functions/enable-scroll';
     burger?.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
-    navigationBackground.classList.remove('navigation-bg__active');
+    mainPageContainer.classList.remove('sidebar-offset');
     enableScroll();
   });
 
@@ -41,7 +41,7 @@ import { enableScroll } from '../functions/enable-scroll';
       burger?.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
-      navigationBackground.classList.remove('navigation-bg__active');
+      mainPageContainer.classList.remove('sidebar-offset');
       enableScroll();
     });
   });

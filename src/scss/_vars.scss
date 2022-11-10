@@ -3,7 +3,7 @@
 :root {
   // base
   --font-family: "Poppins", sans-serif;
-  --content-width: 1400px;
+  --content-width: 1575px;
   --container-offset: 0px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
@@ -11,6 +11,8 @@
   --cs-white: #fff;
   --cs-body-bg: #10121C;
   --grey: #EAEBF0;
+  --cs-grey: #696B77;
   --orange: #FF5D39;
+  --dark: #21232F;
 
 }

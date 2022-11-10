@@ -1,0 +1,66 @@
+@mixin btn-transparent {
+
+    &:hover {
+
+    }
+}
+
+@mixin btn-link {
+
+    &:hover {
+
+    }
+}
+
+@mixin btn-animate {
+
+}
+
+@mixin title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@mixin socials {
+    .socials {
+        .list {
+            gap: 10px;
+
+            &__link {
+                background: rgba(234, 235, 240, .05);
+                border-radius: 4px;
+                @include flex-all-center;
+                width: 35px;
+                height: 35px;
+
+                .icon {
+                    width: 15px;
+                    height: 15px;
+                    fill: var(--cs-grey-text);
+                    transition: all ease-in-out .4s;
+                }
+
+                &:hover {
+                    .icon {
+                        transform: scale(1.5) translateY(-5px);
+                    }
+                    .icon.telegram {
+                        fill: #0088CC;
+                    }
+                    .icon.youtube {
+                        fill: #FF0000;
+                    }
+                    .icon.twitter {
+                        fill: #1DA1F2;
+                    }
+                    .icon.instagram {
+                        fill: #DD2A7B;
+                    }
+                    .icon.facebook {
+                        fill: #3b5998;
+                    }
+                }
+            }
+        }
+    }
+}

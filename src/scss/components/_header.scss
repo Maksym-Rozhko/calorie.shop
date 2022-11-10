@@ -1,0 +1,21 @@
+.header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 111;
+    cursor: default;
+
+    .burger {
+        @include burger;
+    }
+    
+    .mobile-menu {
+        @include mobile-menu;
+    }
+}
+
+.header.active-scroll {
+    background-color: var(--cs-grey);
+}

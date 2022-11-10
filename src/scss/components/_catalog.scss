@@ -1,0 +1,129 @@
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px 15px;
+}
+
+.card {
+    background: rgba(234, 235, 240, 0.05);
+    border: 1px solid rgba(105,107,119, .5);
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
+    max-width: 250px;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+
+    &--rare {
+        border: 1px solid rgba(11, 112, 144, 0.5);
+        
+        .card__status {
+            background: linear-gradient(180deg, rgba(11, 112, 144, 0) 0%, #0B7090 100%);
+        }
+    }
+
+    &--uncommon {
+        border: 1px solid rgba(203,69,70, .5);
+
+        .card__status {
+            background: linear-gradient(180deg, rgba(203, 69, 70, 0) 0%, #CB4546 100%);
+        }
+    }
+
+    &--legendary {
+        border: 1px solid rgba(255,93,57, .5);
+
+        .card__status {
+            background: linear-gradient(360deg, #FF5D39 0%, rgba(255, 178, 63, 0) 100%);
+        }
+    }
+
+    &--common {
+        border: 1px solid rgba(105,107,119, .5);
+
+
+        .card__status {
+            background: linear-gradient(180deg, rgba(105, 107, 119, 0) 0%, #696B77 100%);
+        }
+    }
+
+    &--epic {
+        border: 1px solid rgba(103,64,154, .5);
+
+
+        .card__status {
+            background: linear-gradient(180deg, rgba(103, 64, 154, 0) 0%, #67409A 100%);
+        }
+    }
+
+    &__status {
+        background: linear-gradient(180deg, rgba(105, 107, 119, 0) 0%, #696B77 100%);
+        border-radius: 0px 0px 30px 30px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: -0.03em;
+        color: var(--grey);
+        display: block;
+        margin: 0 15px;
+        padding: 10px 10px 6px 10px;
+    }
+
+    &__image-wrap {
+        text-align: center;
+    }
+
+    &__info {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 15px 15px 15px;
+    }
+
+    &__labels {
+        @include flex-all-sb;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        &-label {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 100%;
+            text-align: center;
+            letter-spacing: -0.03em;
+            color: var(--grey);
+            padding: 5px 15px;
+            background: rgba(234, 235, 240, 0.05);
+            border-radius: 30px;
+        }
+    }
+
+    &__bottom {
+        @include flex-all-sb;
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.03em;
+        color: var(--grey);
+    }
+
+    &__buy {
+        @include flex-all-center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--orange);
+
+        .icon {
+            width: 19px;
+            height: 19px;
+            fill: var(--grey);
+        }
+    }
+}

@@ -55,7 +55,8 @@ body.sidebar-offset {
     }
 
     .profile {
-
+        position: relative;
+        
         &__wrap {
             @include flex-v-center;
             padding-right: 14px;
@@ -72,6 +73,7 @@ body.sidebar-offset {
                 right: 0;
                 bottom: 6px;
                 transform: rotate(0deg);
+                transform-origin: center;
                 transition: all ease-in-out .4s;
             }
         
@@ -110,6 +112,45 @@ body.sidebar-offset {
             line-height: 15px;
             display: block;
             color: var(--cs-grey);
+        }
+
+        &__nav {
+            background: var(--dark);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-top: 10px;
+            position: absolute;
+            left: 0;
+            right: 0;
+
+            li:not(:last-child) {
+                a {
+                    border-bottom: 1px solid var(--grey);
+                }
+            }
+
+            a {
+                display: block;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 100%;
+                letter-spacing: -0.05em;
+                color: var(--grey);
+                padding: 10px 5px;
+                transition: color ease-in-out 0.4s;
+
+                &:hover {
+                    color: var(--orange)
+                }
+            }
+        }
+
+        &--show {
+            .profile__wrap {
+                &::before {
+                    transform: rotate(180deg);
+                }
+            }
         }
     }
 

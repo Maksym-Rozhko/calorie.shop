@@ -89,12 +89,71 @@
             max-width: 200px;
         }
     }
+    
+    .order-modal.no-funds {
+        padding: 70px 40px;
+
+        .order-modal__title {
+            line-height: 120%;
+            margin-top: 0;
+        }
+
+        .no-funds {
+            &__image {
+                margin: 35px 0;
+                text-align: center;
+            }
+            .order-modal__btns-group {
+                a {
+                    text-align: center;
+                }
+            }
+
+            .order-modal__price {
+                padding-left: 10px;
+                padding-right: 10px;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgba(234, 235, 240, 0.1);
+                    padding-bottom: 7px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            &__diff {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 120%;
+                text-align: center;
+                letter-spacing: -0.05em;
+                color: var(--cs-grey);
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 @include mobile {
     .graph-modal {
         &__container {
             padding: 0 15px 60px 15px;
+        }
+        .order-modal.no-funds {
+            padding: 70px 15px 60px 15px;
+
+            .no-funds {
+                &__diff {
+                    max-width: 202px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .order-modal__price {
+                    border-bottom: 1px solid rgba(234, 235, 240, 0.1);
+                    padding-bottom: 12px;
+                    margin-bottom: 10px;
+                }
+            }
         }
         .order-modal {
             .product__status {
@@ -110,6 +169,23 @@
             .product__image {
                 max-width: 260px;
                 max-height: 170px;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .graph-modal {
+        .order-modal {
+            &__btns-group {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            &__price {
+                font-size: 12px;
+                .price {
+                    font-size: 18px;
+                }
             }
         }
     }

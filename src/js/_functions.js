@@ -30,8 +30,8 @@ import { disableScroll } from './functions/disable-scroll';
 import { enableScroll } from './functions/disable-scroll';
 
 // Реализация модального окна
-// import GraphModal from 'graph-modal';
-// const modal = new GraphModal();
+import GraphModal from 'graph-modal';
+const modal = new GraphModal();
 
 // Реализация табов
 // import GraphTabs from 'graph-tabs';

@@ -1,0 +1,116 @@
+.graph-modal {
+    background-color: rgba(18, 21, 32, 0.9);
+    @include flex-all-center;
+
+    &::before {
+        content: none;
+    }
+
+    &__container {
+        background: rgba(234, 235, 240, 0.05);
+        backdrop-filter: blur(30px);
+        border-radius: 18px;
+        max-width: 540px;
+        width: 100%;
+        padding: 0 40px 60px 40px;
+        margin: 50px 25px;
+    }
+
+    .order-modal {
+        .product__status {
+            max-width: 340px;
+            margin: 0 auto;
+        }
+
+        &__title {
+            text-align: center;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing: -0.05em;
+            margin-top: 35px;
+            margin-bottom: 10px;
+        }
+
+        .product__image {
+            max-height: 220px;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        .product__code {
+            border-bottom: 1px solid rgba(234, 235, 240, 0.1);
+            padding-bottom: 14px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        &__price {
+            @include flex-v-center;
+            padding-left: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 125%;
+            letter-spacing: -0.05em;
+            color: var(--grey);
+
+            .price {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 100%;
+                letter-spacing: -0.05em;
+                color: var(--orange);
+                margin-left: auto;
+            }
+        }
+
+        &__btns-group {
+            @include flex-all-sb;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .product__close-btn {
+            padding: 12px;
+            border-radius: 40px;
+            background-color: rgba(234, 235, 240, 0.05);
+            color: var(--grey);
+            max-width: 200px;
+            width: 100%;
+            transition: all ease-in-out .4s;
+
+            &:hover {
+                background-color: rgba(234, 235, 240, 0.5);
+            }
+        }
+
+        .product__order-btn {
+            color: var(--grey);
+            max-width: 200px;
+        }
+    }
+}
+
+@include mobile {
+    .graph-modal {
+        &__container {
+            padding: 0 15px 60px 15px;
+        }
+        .order-modal {
+            .product__status {
+                padding: 6px;
+                font-size: 11px;
+                max-width: 123px;
+            }
+            &__title {
+                font-size: 20px;
+                margin-top: 54px;
+                margin-bottom: 40px;
+            }
+            .product__image {
+                max-width: 260px;
+                max-height: 170px;
+            }
+        }
+    }
+}

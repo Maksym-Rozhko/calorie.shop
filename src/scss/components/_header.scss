@@ -122,6 +122,7 @@ body.sidebar-offset {
             position: absolute;
             left: 0;
             right: 0;
+            min-width: 150px;
 
             li:not(:last-child) {
                 a {

@@ -9,9 +9,11 @@
 @import "./components/shop";
 @import "./components/sidebar";
 @import "./components/catalog";
+@import "./components/filter";
 @import "./components/product";
 @import "./mixins/burger";
 @import "./components/modals";
+// @import "./components/auth";
 
 // подкоючение медиа 
 @import "./components/media/header";
@@ -19,4 +21,6 @@
 @import "./components/media/shop";
 @import "./components/media/sidebar";
 @import "./components/media/catalog";
+@import "./components/media/filter";
 @import "./components/media/product";
+// @import "./components/media/auth";

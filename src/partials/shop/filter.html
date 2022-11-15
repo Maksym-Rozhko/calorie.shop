@@ -1,0 +1,82 @@
+<div class="shop-filter">
+    <div class="shop-filter__wrapper">
+        <h2 class="shop-filter__title">
+            <div class="shop-filter__icon">
+                <svg class="icon">
+                    <use xlink:href="images/sprite.svg#filter"></use>
+                </svg>
+            </div>
+            Filter
+        </h2>
+        <div class="shop-filter__groups">
+            <div class="shop-filter__block">
+                <div class="shop-filter__subtitle">Category:</div>
+                <div class="shop-filter__select">
+                    <select class="js-example-basic-single" name="category">
+                        <option value="0">Basic</option>
+                        <option value="1">Common</option>
+                        <option value="2">Epic</option>
+                    </select>
+                </div>
+            </div>
+            <div class="shop-filter__block">
+                <div class="shop-filter__subtitle">Type:</div>
+                <div class="shop-filter__radio-group">
+                    <label class="shop-filter__label">
+                        <input type="radio" name="type" class="shop-filter__input" checked>
+                        <span class="shop-filter__text">All</span>
+                    </label>
+                    <label class="shop-filter__label">
+                        <input type="radio" name="type" class="shop-filter__input">
+                        <span class="shop-filter__text">Runner</span>
+                    </label>
+                    <label class="shop-filter__label">
+                        <input type="radio" name="type" class="shop-filter__input">
+                        <span class="shop-filter__text">Walker</span>
+                    </label>
+                </div>
+            </div>
+            <div class="shop-filter__block">
+                <div class="shop-filter__subtitle">Items:</div>
+                <div class="shop-filter__select">
+                    <select class="js-example-basic-single" name="items">
+                        <option value="0">Sneakers</option>
+                        <option value="1">T-shirts</option>
+                        <option value="2">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="shop-filter__block">
+                <div class="shop-filter__subtitle">Gender:</div>
+                <div class="shop-filter__select">
+                    <select class="js-example-basic-single" name="gender">
+                        <option value="0">for women</option>
+                        <option value="1">for men</option>
+                        <option value="2">for other</option>
+                        <option value="2">for aliens</option>
+                    </select>
+                </div>
+            </div>
+            <div class="shop-filter__block shop-filter__range">
+                <div class="shop-filter__subtitle">
+                    Price <span class="grey price">(0-80)</span>    
+                </div>
+                <label class="range-price">
+                    <input class="price" type="text" id="amount" readonly>
+                    <!-- <span id="range-price"></span> -->
+                </label>
+                <div class="shop-filter__slider-range">
+                    <div id="slider-range"></div>
+                </div>
+            </div>
+        </div>
+        <div class="shop-filter__btns-group">
+            <button class="btn-reset shop-filter__btn shop-filter__search">
+                Search
+            </button>
+            <button class="btn-reset shop-filter__btn shop-filter__clear">
+                Clear filter
+            </button>
+        </div>
+    </div>
+</div>

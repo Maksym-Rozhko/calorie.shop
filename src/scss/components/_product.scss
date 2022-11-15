@@ -86,6 +86,10 @@
 
     &__image {
         @include flex-all-center;
+
+        img {
+            max-height: 610px;
+        }
     }
 
     &__status {

@@ -1,0 +1,66 @@
+@include mobile {
+    .auth {
+        &__welcome {
+            .logo {
+                padding-top: 34px;
+            }
+
+            .welcome {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+        }
+    
+        .welcome {
+            &__text {
+                margin-top: 10px;
+                margin-bottom: 40px;
+            }
+        }
+        &__title {
+            margin-bottom: 25px;
+        }
+        .auth__link {
+            font-size: 10px;
+            line-height: 15px;
+        }
+        .form {
+            &__label {
+                margin-bottom: 12px;
+            }
+            &__btn.sign-up__btn {
+                margin-top: 40px;
+            }
+            .auth__group {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .custom-checkbox__content {
+                font-size: 10px;
+                line-height: 15px;
+            }
+        }
+        &__bottom {
+            margin-bottom: auto;
+            padding-top: 12px;
+            padding-bottom: 0;
+    
+            .auth__link {
+                display: block;
+            }
+        }
+    }
+}
+
+@include small-mobile {
+    .auth {
+        &__welcome {
+            .auth__bottom {
+                &-text {
+                    max-width: 214px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

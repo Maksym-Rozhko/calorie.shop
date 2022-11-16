@@ -3,9 +3,9 @@ $(document).ready(function() {
 
     $("#slider-range").slider({
         range: true,
-        min: 0,
-        max: 500,
-        values: [ 0, 140 ],
+        min: $('#slider-range').data('range-min'),
+        max: $('#slider-range').data('range-max'),
+        values: [$('#slider-range').data('range-min'), $('#slider-range').data('range-max')],
         slide: function( event, ui ) {
         $( "#amount" ).val( "" + ui.values[0] + "-" + ui.values[1]);
         }

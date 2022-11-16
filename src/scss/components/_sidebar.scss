@@ -87,6 +87,11 @@
                     }
                 }
 
+                .icon {
+                    filter: grayscale(1);
+                    opacity: .5;
+                }
+
                 span {
                     font-weight: 500;
                     font-size: 14px;
@@ -95,6 +100,15 @@
                     color: var(--grey);
                     margin-left: 20px;
                     transition: color ease-in-out .4s;
+                }
+            }
+
+            li.active {
+                a {
+                    .icon {
+                        filter: grayscale(0);
+                        opacity: 1;
+                    }
                 }
             }
         }

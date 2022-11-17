@@ -369,4 +369,46 @@
             }
         }
     }
+
+    &__order {
+        background: rgba(234, 235, 240, 0.02);
+        backdrop-filter: blur(30px);
+        border-radius: 20px;
+        min-height: 760px;
+        @include flex-all-center;
+        flex-direction: column;
+
+        &-text {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 150%;
+            text-align: center;
+            letter-spacing: -0.05em;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        &-btn {
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            text-align: center;
+            letter-spacing: -0.03em;
+            color: var(--grey);
+            padding: 11px;
+            background-color: var(--orange);
+            box-shadow: 0 0 15px transparent;
+            border-radius: 30px;
+            max-width: 325px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            transition: all ease-in-out .4s;
+
+            &:hover {
+                box-shadow: 0 0 15px var(--orange);
+            }
+        }
+    }
 }

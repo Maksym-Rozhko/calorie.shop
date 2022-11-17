@@ -1,0 +1,148 @@
+@include big-desktop {
+    .create-wallet {
+        .balance {
+            &__items {
+                .item {
+                    &__amount {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include small-desktop {
+    .sidebar-offset {
+        .create-wallet {
+            .balance {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+    .create-wallet {
+        .balance {
+            &__block {
+                padding: 30px 20px;
+                min-height: inherit;
+
+                &-btn {
+                    margin-top: 200px;
+                }
+            }
+        }
+        &__switcher {
+            max-width: 420px;
+
+            .switcher {
+                max-width: 200px;
+            }
+        }
+        &__btn {
+            max-width: 200px;
+
+            &--active {
+                & + .switcher {
+                    transform: translateX(210px);
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .create-wallet {
+        .balance {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@include mobile {
+    .create-wallet {
+        &__switcher-wrapper {
+            padding-bottom: 0;
+            margin-bottom: 20px;
+            border-bottom: 0;
+        }
+
+        &__switcher {
+            padding: 4px 3px;
+            max-width: 324px;
+
+            .switcher {
+                max-width: 154px;
+            }
+        }
+        &__btn {
+            max-width: 154px;
+
+            &--active {
+                & + .switcher {
+                    transform: translateX(158px);
+                }
+            }
+        }
+        &__tabs {
+            display: flex;
+            margin-bottom: 0;
+        }
+        .balance {
+            &__block {
+                padding: 0;
+                background: transparent;
+                backdrop-filter: none;
+                display: none;
+
+                &-title {
+                    display: none;
+                }
+
+                &--show {
+                    display: block;
+                }
+            }
+
+            &-main {
+                margin-top: 50px;
+                .balance__items {
+                    .item {
+                        background: rgba(234, 235, 240, 0.05);
+                        padding: 10px 22px 10px 10px;
+
+                        &:not(:last-child) {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+            &-history {
+                margin-top: 50px;
+            }
+            &-nft {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@include small-mobile {
+    .create-wallet {
+        &__switcher {
+            max-width: 270px;
+
+            .switcher {
+                max-width: 128px;
+            }
+        }
+        &__btn {
+            max-width: 128px;
+
+            &--active {
+                & + .switcher {
+                    transform: translateX(132px);
+                }
+            }
+        }
+    }
+}

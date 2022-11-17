@@ -4,15 +4,22 @@ const customTabs = (btnSelectors, contentSelectors, activeClass) => {
 
     const removeBtnsActiveClass = () => btns.forEach(btn => btn.classList.remove(activeClass));
     const removeContentsActiveClass = () => contents.forEach(content => content.classList.add('d-none'));
+    const removeWalletTabsActiveContent = () => contents.forEach(content => content.classList.remove('balance__block--show'));
 
     if (btns) {
         btns.forEach((btn, i) => {
             btn.addEventListener('click', () => {
                 if (btn.dataset.catalog === contents[i].id) {
                     removeBtnsActiveClass();
-                    removeContentsActiveClass();
                     btn.classList.add(activeClass);
-                    contents[i].classList.remove('d-none');
+
+                    if (!btn.classList.contains('create-wallet__tabs-btn')) {
+                        removeContentsActiveClass();
+                        contents[i].classList.remove('d-none');
+                    } else {
+                        removeWalletTabsActiveContent();
+                        contents[i].classList.add('balance__block--show');
+                    }
                 }
             });
         });
@@ -20,4 +27,5 @@ const customTabs = (btnSelectors, contentSelectors, activeClass) => {
 }
 
 customTabs('.shop .shop-tabs__tab', '.shop .catalog', 'shop-tabs__tab--active');
-
+customTabs('.wallet .create-wallet__btn', '.wallet .create-wallet__content', 'create-wallet__btn--active');
+customTabs('.wallet .create-wallet__tabs-btn', '.wallet .balance__block', 'create-wallet__tabs-btn--active');

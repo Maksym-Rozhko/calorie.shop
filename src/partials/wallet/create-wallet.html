@@ -1,0 +1,411 @@
+<div class="create-wallet">
+    <div class="create-wallet__switcher-wrapper">
+        <div class="create-wallet__switcher">
+            <button data-catalog="balance" class="create-wallet__btn btn-reset create-wallet__btn--active" type="button">
+                Balance
+            </button>
+            <button data-catalog="wallet" class="create-wallet__btn btn-reset" type="button">
+                Wallet
+            </button>
+            <span class="switcher"></span>
+        </div>
+    </div>
+    <div id="balance" class="create-wallet__content balance">
+        <div class="create-wallet__tabs">
+            <button data-catalog="main" class="create-wallet__tabs-btn btn-reset create-wallet__tabs-btn--active" type="button">
+                Main
+            </button>
+            <button data-catalog="history" class="create-wallet__tabs-btn btn-reset" type="button">
+                History
+            </button>
+            <button data-catalog="nft" class="create-wallet__tabs-btn btn-reset" type="button">
+                NFT
+            </button>
+        </div>
+        <div id="main" class="balance__block balance__block--show balance-main">
+            <h2 class="balance__block-title">
+                Main
+            </h2>
+            <div class="balance__items">
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/calorie.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        0.4636
+                    </div>
+                    <div class="item__status">
+                        Project Coin
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/binance.svg" alt="BNB">
+                    </div>
+                    <div class="item__amount">0.1280</div>
+                    <div class="item__status">BNB</div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/binance-2.svg" alt="BUSD (USDT)">
+                    </div>
+                    <div class="item__amount">0.4636</div>
+                    <div class="item__status">BUSD (USDT)</div>
+                </div>
+            </div>
+            <button class="balance__block-btn btn-reset" type="button">
+                <span class="icon-text">
+                    Transfer
+                </span>
+            </button>
+        </div>
+        <div id="history" class="balance__block balance-history">
+            <h2 class="balance__block-title">
+                History
+            </h2>
+            <div class="balance__items">
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/calorie.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/binance.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--approved"> 
+                        Approved
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/calorie.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--rejected"> 
+                        Rejected
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/binance-2.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--receive">Receive</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/binance.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--receive">Receive</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/calorie.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/calorie.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/calorie.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/binance.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--approved"> 
+                        Approved
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/binance.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--approved"> 
+                        Approved
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/binance.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">0.4636 <span class="grey">(Project Coin)</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--approved"> 
+                        Approved
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="nft" class="balance__block balance-nft">
+            <h2 class="balance__block-title">
+                NFT
+            </h2>
+            <div class="balance__items">
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--approved"> 
+                        Approved
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--rejected"> 
+                        Rejected
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--receive">Receive</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--receive">Receive</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                    
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--pending"> 
+                        Pending
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--approved"> 
+                        Approved
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--approved"> 
+                        Approved
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__icon">
+                        <img class="icon" src="images/icon/nft-default.svg" alt="Project Coin">
+                    </div>
+                    <div class="item__amount">
+                        <div class="amount">Code: <span class="grey">№ 72184782</span></div>
+                        <div class="date">
+                            14 / 10 / 2022 
+                            <span class="date__status date__status--send">Send</span> 
+                        </div>
+                    </div>
+                    <div class="item__status item__status--approved"> 
+                        Approved
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wallet" class="create-wallet__content create-new-wallet d-none">
+        wallet
+    </div>
+</div>

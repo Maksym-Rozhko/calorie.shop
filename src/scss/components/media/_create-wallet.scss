@@ -61,7 +61,7 @@
 @include mobile {
     .create-wallet {
         margin-top: 0;
-        
+
         &__switcher-wrapper {
             padding-bottom: 0;
             margin-bottom: 20px;
@@ -136,7 +136,7 @@
             &-text {
                 font-size: 20px;
             }
-            &-btn {
+            &-btns-group {
                 margin-bottom: 100px;
                 margin-top: auto;
             }

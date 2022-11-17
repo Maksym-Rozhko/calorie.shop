@@ -132,60 +132,105 @@
             }
         }
     }
-}
 
-@include mobile {
-    .graph-modal {
-        &__container {
-            padding: 0 15px 60px 15px;
-        }
-        .order-modal.no-funds {
-            padding: 70px 15px 60px 15px;
+    .import-wallet {
+        padding: 70px 55px;
 
-            .no-funds {
-                &__diff {
-                    max-width: 202px;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                .order-modal__price {
-                    border-bottom: 1px solid rgba(234, 235, 240, 0.1);
-                    padding-bottom: 12px;
-                    margin-bottom: 10px;
-                }
-            }
+        .form {
+            @include flex-v-center;
+            flex-direction: column;
         }
-        .order-modal {
-            .product__status {
-                padding: 6px;
-                font-size: 11px;
-                max-width: 123px;
+
+        &__title {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 130%;
+            text-align: center;
+            letter-spacing: -0.05em;
+            color: var(--grey);
+        }
+
+        &__text {
+            margin-top: 0;
+            margin-bottom: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 120%;
+            text-align: center;
+            max-width: 265px;
+            color: var(--red);
+        }
+
+        .custom-checkbox {
+            @include custom-checkbox;
+            max-width: 270px;
+            display: flex;
+            margin-bottom: 40px;
+
+            &__content {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 18px;
+                color: var(--grey);
+
+                &::before {
+                    top: 2px;
+                    width: 14px;
+                    height: 14px;
+                    border: none;
+                    background-color: var(--orange);
+                    border-radius: 4px;
+                }
+
+                &::after {
+                    background-image: url('../../images/icon/checkbox.svg');
+                    top: 2px;
+                }
             }
-            &__title {
-                font-size: 20px;
-                margin-top: 54px;
-                margin-bottom: 40px;
-            }
-            .product__image {
-                max-width: 260px;
-                max-height: 170px;
+
+            &__field:checked + .custom-checkbox__content {
+                &::after {
+                    opacity: 1;
+                }
             }
         }
     }
-}
 
-@media (max-width: 360px) {
-    .graph-modal {
-        .order-modal {
-            &__btns-group {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            &__price {
-                font-size: 12px;
-                .price {
-                    font-size: 18px;
-                }
+    &__btn-next {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.03em;
+        color: var(--grey);
+        padding-right: 55px;
+        position: relative;
+        transition: all ease-in-out .4s;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: var(--orange);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: url('../images/icon/arrow-white.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
+            @include flex-all-center;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all ease-in-out .4s;
+        }
+
+        &:hover {
+            &::after {
+                transform: translateY(-50%) translateX( 10px);
             }
         }
     }

@@ -393,6 +393,14 @@
             margin-bottom: 40px;
         }
 
+        &-btns-group {
+            @include flex-all-sb;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            max-width: 670px;
+        }
+
         &-btn {
             display: block;
             font-weight: 500;
@@ -413,6 +421,14 @@
 
             &:hover {
                 box-shadow: 0 0 15px var(--orange);
+            }
+
+            &.btn-ocean {
+                background-color: var(--ocean);
+
+                &:hover {
+                    box-shadow: 0 0 15px var(--ocean);
+                }
             }
         }
     }

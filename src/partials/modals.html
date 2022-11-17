@@ -75,4 +75,38 @@
             </div>
         </div>
     </div>
+    <div class="graph-modal__container import-wallet" role="dialog" aria-modal="true" data-graph-target="import-wallet">
+        <div class="graph-modal__content">
+            <form class="form" action="#">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30.0001" cy="30" r="30" fill="white" fill-opacity="0.05"/>
+                    <circle cx="30.0001" cy="30" r="28.5" stroke="#CB3C45" stroke-opacity="0.5" stroke-width="3"/>
+                    <path d="M32.3292 15.6035L31.9274 33.209H28.0069L27.6173 15.6035H32.3292ZM29.9671 40.8064C29.2285 40.8064 28.5954 40.5467 28.0678 40.0272C27.5483 39.5077 27.2886 38.8746 27.2886 38.1279C27.2886 37.3973 27.5483 36.7723 28.0678 36.2529C28.5954 35.7334 29.2285 35.4736 29.9671 35.4736C30.6895 35.4736 31.3145 35.7334 31.8421 36.2529C32.3779 36.7723 32.6457 37.3973 32.6457 38.1279C32.6457 38.623 32.5199 39.0735 32.2683 39.4793C32.0248 39.8852 31.7001 40.2098 31.2943 40.4533C30.8965 40.6887 30.4542 40.8064 29.9671 40.8064Z" fill="#CB3C45"/>
+                </svg>
+                <h2 class="import-wallet__title">
+                    Please write down this 12 word seed<br>
+                    phrase in a place you trust
+                </h2>                    
+                <p class="import-wallet__text">
+                    Please write down this 12 word seed
+                    phrase in a place you trust
+                </p>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="seed-phrase" class="custom-checkbox__field" required="">
+                    <span class="custom-checkbox__content">
+                        I acknowledge the information provided 
+                        and ready to write the seed phrase
+                    </span>
+                </label>
+                <button class="btn-reset graph-modal__btn-next" data-graph-path="seed-phrase">
+                    Next
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="graph-modal__container seed-phrase" role="dialog" aria-modal="true" data-graph-target="seed-phrase">
+        <div class="graph-modal__content">
+            Import wallet 2222
+        </div>
+    </div>
 </div>

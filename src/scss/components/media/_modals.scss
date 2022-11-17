@@ -1,0 +1,85 @@
+@include mobile {
+    .graph-modal {
+        &__container {
+            padding: 0 15px 60px 15px;
+        }
+        .order-modal.no-funds {
+            padding: 70px 15px 60px 15px;
+
+            .no-funds {
+                &__diff {
+                    max-width: 202px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .order-modal__price {
+                    border-bottom: 1px solid rgba(234, 235, 240, 0.1);
+                    padding-bottom: 12px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .order-modal {
+            .product__status {
+                padding: 6px;
+                font-size: 11px;
+                max-width: 123px;
+            }
+            &__title {
+                font-size: 20px;
+                margin-top: 54px;
+                margin-bottom: 40px;
+            }
+            .product__image {
+                max-width: 260px;
+                max-height: 170px;
+            }
+        }
+        .import-wallet {
+            padding: 60px 30px;
+
+            &__title {
+                max-width: 220px;
+                font-size: 20px;
+                margin-bottom: 15px;
+
+                br {
+                    display: none;
+                }
+            }
+
+            .custom-checkbox {
+                max-width: 226px;
+                margin-bottom: 25px;
+
+                &__content {
+                    font-size: 10px;
+                    line-height: 15px;
+                }
+            }
+        }
+        &__btn-text {
+            &::after {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .graph-modal {
+        .order-modal {
+            &__btns-group {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            &__price {
+                font-size: 12px;
+                .price {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

@@ -98,7 +98,7 @@
                         and ready to write the seed phrase
                     </span>
                 </label>
-                <button class="btn-reset graph-modal__btn-next" data-graph-path="seed-phrase">
+                <button type="button" class="btn-reset graph-modal__btn-next" data-graph-path="seed-phrase">
                     Next
                 </button>
             </form>
@@ -106,7 +106,36 @@
     </div>
     <div class="graph-modal__container seed-phrase" role="dialog" aria-modal="true" data-graph-target="seed-phrase">
         <div class="graph-modal__content">
-            Import wallet 2222
+            <h2 class="seed-phrase__title">
+                New Wallet
+            </h2>
+            <p class="seed-phrase__text">
+                We won't be able to restore your access to the wallet if you 
+                loose your seed phrase, So keep it wisely and never loose
+            </p>
+            <ol class="seed-phrase__list">
+                <li>Inspect</li>
+                <li>Yellow</li>
+                <li>World</li>
+                <li>Business</li>
+                <li>Important</li>
+                <li>Specific</li>
+                <li>Wallet</li>
+                <li>Goal</li>
+                <li>Tranche</li>
+                <li>Share</li>
+                <li>Medium</li>
+                <li>Transport</li>
+            </ol>
+            <div class="seed-phrase__btns-group">
+                <button class="btn-reset graph-modal__btn-copy seed-phrase__copy">
+                    Copy phrase 
+                    <span>Copied</span>
+                </button>
+                <a href="#" class="btn-reset graph-modal__btn-next">
+                    Next
+                </a>
+            </div>
         </div>
     </div>
 </div>

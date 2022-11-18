@@ -54,4 +54,26 @@ document.addEventListener('DOMContentLoaded', () => {
             hideCatalogFilter();
         });
     }
+
+    const seedPhraseList = document.querySelectorAll('.seed-phrase .seed-phrase__list li');
+    const seedPhraseBtnCopy = document.querySelector('.seed-phrase .seed-phrase__copy');
+
+    if (seedPhraseBtnCopy) {
+        seedPhraseBtnCopy.addEventListener('click', () => {
+            let seedPhrase = '';
+
+            seedPhraseList.forEach(li => {
+                seedPhrase += ` ${li.textContent}`;
+            });
+
+            navigator.clipboard.writeText(seedPhrase)
+                .then(() => {
+                    seedPhraseBtnCopy.classList.add('copied');
+                    setTimeout(function () {
+                        seedPhraseBtnCopy.classList.remove('copied');
+                    }, 1500)
+
+                })
+        });
+    }
 });

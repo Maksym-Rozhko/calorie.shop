@@ -200,6 +200,107 @@
         }
     }
 
+    .seed-phrase {
+        padding: 70px 40px;
+        text-align: center;
+
+        &__title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 130%;
+            letter-spacing: -0.05em;
+            color: var(--grey);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &__text {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 120%;
+            color: var(--red);
+            margin-top: 25px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 427px;
+        }
+        
+        &__list {
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: left;
+            padding-left: 20px;
+
+            li {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 21px;
+                color: var(--grey);
+                padding-left: 14px;
+
+                &:not(:last-child) {
+                    padding-bottom: 6px;
+                    margin-bottom: 6px;
+                    border-bottom: 1px solid rgba(234, 235, 240, 0.1);
+                }
+            }
+        }
+
+        &__btns-group {
+            @include flex-all-sb;
+            margin-top: 28px;
+
+            .graph-modal__btn-copy {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 100%;
+                letter-spacing: -0.03em;
+                color: var(--grey);
+                padding-left: 33px;
+                position: relative;
+                transition: color ease-in-out .4s;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    background-color: rgba(255, 255, 255, 0.05);
+                    background-image: url('../images/icon/copy.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: auto;
+                    border-radius: 8px;
+                    @include flex-all-center;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:hover {
+                    color: var(--orange);
+                }
+
+                span {
+                    position: absolute;
+                    top: 0;
+                    left: -10px;
+                    opacity: 0;
+                    transition: all ease-in-out .4s;
+                }
+
+                &.copied {
+                    span {
+                        top: -25px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
     &__btn-next {
         font-weight: 500;
         font-size: 14px;

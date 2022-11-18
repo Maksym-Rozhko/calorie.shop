@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const seedPhraseList = document.querySelectorAll('.seed-phrase .seed-phrase__list li');
     const seedPhraseBtnCopy = document.querySelector('.seed-phrase .seed-phrase__copy');
+    let seedPhraseStorage = '';
 
     if (seedPhraseBtnCopy) {
         seedPhraseBtnCopy.addEventListener('click', () => {
@@ -68,12 +69,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
             navigator.clipboard.writeText(seedPhrase)
                 .then(() => {
+                    localStorage.setItem('seed-phrase', seedPhrase);
+
                     seedPhraseBtnCopy.classList.add('copied');
                     setTimeout(function () {
                         seedPhraseBtnCopy.classList.remove('copied');
                     }, 1500)
-
                 })
         });
     }
+
+    const seedPhraseWords = document.querySelectorAll('.seed-phrase-page .words-list .words-list__word');
+    const seedPhraseWordsChoosedArea = document.querySelector('.seed-phrase-page .form__area');
+    const seedPhraseWordsInput = document.querySelector('.seed-phrase-page .form__seed-phrase-input');
+    const seedPhraseWordsSubmitBtn = document.querySelector('.seed-phrase-page .form .form__submit');
+
+    if (seedPhraseWords) {
+        seedPhraseStorage = localStorage.getItem('seed-phrase');
+
+        seedPhraseWords.forEach((word, i) => {
+            word.addEventListener('click', () => {
+                word.classList.add('word-choosed');
+                seedPhraseWordsChoosedArea.innerHTML += `
+                    <span>${word.textContent}</span>
+                `;
+                seedPhraseWordsInput.value += ` ${word.textContent}`;
+
+                seedPhraseWordsInput.value === seedPhraseStorage ? seedPhraseWordsSubmitBtn.classList.add('submit-active') : seedPhraseWordsSubmitBtn.classList.remove('submit-active');
+            });
+        });
+
+        seedPhraseWordsChoosedArea?.addEventListener('click', e => {
+            const target = e.target;
+
+            if (target.tagName === 'SPAN') {
+                target.remove();
+
+                seedPhraseWords.forEach(word => {
+                    if (word.textContent === target.textContent) {
+                        word.classList.remove('word-choosed');
+                        seedPhraseWordsInput.value = seedPhraseWordsInput.value.replace(` ${target.textContent}`, '');
+                        seedPhraseWordsInput.value === seedPhraseStorage ? seedPhraseWordsSubmitBtn.classList.add('submit-active') : seedPhraseWordsSubmitBtn.classList.remove('submit-active');
+                    }
+                });
+            }
+        });
+    };
 });

@@ -1,0 +1,33 @@
+@include tablet {
+    .seed-phrase-page {
+        &__container {
+            padding: 100px 25px;
+        }
+    }
+}
+
+@include mobile {
+    .seed-phrase-page {
+        &__container {
+            background: transparent;
+            backdrop-filter: none;
+            padding: 25px 0;
+        }
+
+        &__title {
+            font-size: 20px;
+        }
+
+        &__text {
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            .words-list {
+                margin-top: 20px;
+                margin-bottom: 80px;
+            }
+        }
+    }
+}

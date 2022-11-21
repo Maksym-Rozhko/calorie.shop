@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const seedPhraseList = document.querySelectorAll('.seed-phrase .seed-phrase__list li');
     const seedPhraseBtnCopy = document.querySelector('.seed-phrase .seed-phrase__copy');
-    let seedPhraseStorage = '';
+    let seedPhraseModalCopy = '';
 
     if (seedPhraseBtnCopy) {
         seedPhraseBtnCopy.addEventListener('click', () => {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             navigator.clipboard.writeText(seedPhrase)
                 .then(() => {
-                    localStorage.setItem('seed-phrase', seedPhrase);
+                    seedPhraseModalCopy = seedPhrase;
 
                     seedPhraseBtnCopy.classList.add('copied');
                     setTimeout(function () {
@@ -89,8 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const seedPhraseWordsSubmitBtn = document.querySelector('.seed-phrase-page .form .form__submit');
 
     if (seedPhraseWords) {
-        seedPhraseStorage = localStorage.getItem('seed-phrase');
-
         seedPhraseWords.forEach((word, i) => {
             word.addEventListener('click', () => {
                 word.classList.add('word-choosed');
@@ -99,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 seedPhraseWordsInput.value += ` ${word.textContent}`;
 
-                seedPhraseWordsInput.value === seedPhraseStorage ? seedPhraseWordsSubmitBtn.classList.add('submit-active') : seedPhraseWordsSubmitBtn.classList.remove('submit-active');
+                seedPhraseWordsInput.value === seedPhraseModalCopy ? seedPhraseWordsSubmitBtn.classList.add('submit-active') : seedPhraseWordsSubmitBtn.classList.remove('submit-active');
             });
         });
 
@@ -113,18 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (word.textContent === target.textContent) {
                         word.classList.remove('word-choosed');
                         seedPhraseWordsInput.value = seedPhraseWordsInput.value.replace(` ${target.textContent}`, '');
-                        seedPhraseWordsInput.value === seedPhraseStorage ? seedPhraseWordsSubmitBtn.classList.add('submit-active') : seedPhraseWordsSubmitBtn.classList.remove('submit-active');
+                        seedPhraseWordsInput.value === seedPhraseModalCopy ? seedPhraseWordsSubmitBtn.classList.add('submit-active') : seedPhraseWordsSubmitBtn.classList.remove('submit-active');
                     }
                 });
             }
         });
 
-        seedPhraseModalNextBtn.addEventListener('click', () => {
+        seedPhraseModalNextBtn?.addEventListener('click', () => {
             seedPhraseWordsContainer.classList.remove('d-none');
             crateWalletContainer.classList.add('d-none');
         });
 
-        seedPhraseWordsReturnLink.addEventListener('click', () => {
+        seedPhraseWordsReturnLink?.addEventListener('click', () => {
             seedPhraseWordsContainer.classList.add('d-none');
             crateWalletContainer.classList.remove('d-none'); 
         })

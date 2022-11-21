@@ -9,6 +9,7 @@ const customTabs = (btnSelectors, contentSelectors, activeClass) => {
     if (btns) {
         btns.forEach((btn, i) => {
             btn.addEventListener('click', () => {
+                if (!contents[i]) return;
                 if (btn.dataset.catalog === contents[i].id) {
                     removeBtnsActiveClass();
                     btn.classList.add(activeClass);

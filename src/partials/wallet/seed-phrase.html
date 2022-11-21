@@ -1,7 +1,7 @@
-<div class="seed-phrase-page">
-    <a href="#" class="return-link">
+<div class="seed-phrase-page d-none">
+    <button type="button" class="return-link btn-reset" data-graph-path="seed-phrase">
         Back
-    </a>
+    </button>
     <div class="seed-phrase-page__container">
         <h2 class="seed-phrase-page__title">
             Please choose words in an order you wrote it down
@@ -27,9 +27,20 @@
                 <span class="words-list__word">Goal</span>
                 <span class="words-list__word">Share</span>
             </div>
-            <a href="#" class="btn-reset form__submit">
+            <div class="password">
+                <label class="form__label form__label--password">
+                    <input type="password" class="form__input" placeholder="Enter your password" required="">
+                    <svg class="icon">
+                        <use xlink:href="images/sprite.svg#lock"></use>
+                    </svg>
+                </label>
+                <strong class="password__strong">
+                    The password must be at least 8 characters long. Be sure to include upper case, numbers and special characters
+                </strong>   
+            </div>
+            <button type="submit" class="btn-reset form__submit">
                 Сreate New Wallet
-            </a>
+            </button>
         </form>
     </div>
 </div>

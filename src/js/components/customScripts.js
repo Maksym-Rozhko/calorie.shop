@@ -79,6 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const crateWalletContainer = document.querySelector('.wallet .create-wallet');
+    const seedPhraseWordsContainer = document.querySelector('.wallet .seed-phrase-page');
+    const seedPhraseWordsReturnLink = document.querySelector('.wallet .seed-phrase-page .return-link');
+    const seedPhraseModalNextBtn = document.querySelector('.seed-phrase .graph-modal__btn-next');
     const seedPhraseWords = document.querySelectorAll('.seed-phrase-page .words-list .words-list__word');
     const seedPhraseWordsChoosedArea = document.querySelector('.seed-phrase-page .form__area');
     const seedPhraseWordsInput = document.querySelector('.seed-phrase-page .form__seed-phrase-input');
@@ -114,5 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
+        seedPhraseModalNextBtn.addEventListener('click', () => {
+            seedPhraseWordsContainer.classList.remove('d-none');
+            crateWalletContainer.classList.add('d-none');
+        });
+
+        seedPhraseWordsReturnLink.addEventListener('click', () => {
+            seedPhraseWordsContainer.classList.add('d-none');
+            crateWalletContainer.classList.remove('d-none'); 
+        })
     };
 });

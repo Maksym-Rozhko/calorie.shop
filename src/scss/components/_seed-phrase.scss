@@ -32,6 +32,36 @@
         text-align: center;
     }
 
+    .password {
+        max-width: 450px;
+        width: 100%;
+        margin-right: auto;
+        @include flex-v-center;
+        flex-direction: column;
+        position: relative;
+        z-index: 11;
+
+
+        &__strong {
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 15px;
+            color: var(--grey);
+            display: block;
+            padding-left: 5px;
+            position: relative;
+            margin-bottom: 50px;
+
+            &::before {
+                content: "*";
+                position: absolute;
+                color: var(--orange);
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+
     .form {
         max-width: 1045px;
         width: 100%;
@@ -105,6 +135,51 @@
                     pointer-events: none;
                 }
             }
+        }
+
+        &__label {
+            margin-bottom: 15px;
+            position: relative;
+            width: inherit;
+
+            .icon {
+                width: 12px;
+                height: 12px;
+                fill: var(--cs-grey);
+                position: absolute;
+                top: calc(50% - 6px);
+                left: 18px;
+            }
+        }
+
+        &__input {
+            border: 1px solid transparent;
+            background: rgba(234, 235, 240, 0.05);
+            border-radius: 30px;
+            padding: 12px 40px;
+            width: 100%;
+            color: var(--cs-text);
+            caret-color: var(--orange);
+            transition: all ease-in-out .4s;
+        }
+
+        &__input::placeholder {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: var(--cs-grey);
+            transition: all ease-in-out .4s;
+        }
+
+        &__input:focus {
+            border: 1px solid var(--orange);
+            outline: transparent;
+            background-color: transparent;
+        }
+
+        &__input:focus + .icon {
+            fill: var(--orange);
+            animation: swing .4s ease-in-out forwards;
         }
 
         &__submit {

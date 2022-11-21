@@ -77,6 +77,15 @@
                 margin-top: 30px;
             }
         }
+        .seed-phrase-words {
+            .seed-phrase-page {
+                .form {
+                    &__area {
+                        height: auto;
+                    }
+                }
+            }
+        }
         &__btn-text {
             &::after {
                 width: 35px;

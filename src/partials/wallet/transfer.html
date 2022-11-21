@@ -1,0 +1,42 @@
+<div class="transfer-page">
+    <a href="#" class="return-link">
+        Back
+    </a>
+    <div class="transfer-page__container">
+        <h2 class="transfer-page__title">
+            Transfer
+        </h2>
+        <form action="#" class="transfer-page__form transfer">
+            <div class="transfer__blocks-wrap">
+                <div class="transfer__block">
+                    <span class="transfer__title">From:</span>
+                    <div class="tranfer__role">Balance</div>
+                </div>
+                <div class="transfer__block">
+                    <span class="transfer__title">To:</span>
+                    <div class="tranfer__role">Wallet</div>
+                </div>
+            </div>
+            <div class="transfer__forms-wrap">
+                <div class="transfer__select">
+                    <select class="js-example-basic-single" name="transfer">
+                        <option value="0">Project Coin</option>
+                        <option value="1">Project Coin 2</option>
+                        <option value="2">Something else</option>
+                    </select>
+                </div>
+                <label class="transfer__amount amount">
+                    <input type="number" class="amount__input" placeholder="Amount">
+                    <button class="amount__all btn-reset" type="button">All</button>
+                </label>
+            </div>
+            <div class="transfer__fee">
+                <span class="transfer__fee-text">Fee:</span>
+                <span class="transfer__fee-amount">0.1280 BNB</span>
+            </div>
+            <button class="transfer__confirm-btn btn-reset" type="button" data-graph-path="confirm-transfer">
+                Confirm Transfer
+            </button>
+        </form>
+    </div>
+</div>

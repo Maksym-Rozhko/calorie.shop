@@ -1,0 +1,58 @@
+@include middle-tablet {
+    .transfer-page {
+        &__container {
+            padding: 100px 15px;
+        }
+        
+        .transfer {
+            &__forms-wrap {
+                flex-direction: column;
+            }
+
+            &__amount {
+                position: relative;
+                margin-top: 20px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    border-top: 1px solid rgba(234, 235, 240, 0.1);
+                    height: 1px;
+                    width: 100%;
+                    left: 0;
+                    top: -20px;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .transfer-page {
+        &__container {
+            padding: 0;
+            background: transparent;
+            backdrop-filter: none;
+            border-radius: 0;
+        }
+        &__title {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .transfer {
+            &__blocks-wrap {
+                gap: 45px;
+                margin-bottom: 50px;
+            }
+    
+            &__block {
+                padding: 26px 18px;
+            }
+
+            &__fee {
+                margin-bottom: 230px;
+            }
+        }
+    }
+}

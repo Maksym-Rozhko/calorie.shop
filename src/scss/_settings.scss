@@ -10,6 +10,7 @@ html {
 
 body {
   font-family: var(--font-family, sans-serif);
+  min-width: 320px;
   font-size: 16px;
   line-height: 19px;
   background-color: var(--cs-body-bg);
@@ -76,6 +77,20 @@ a {
   margin-bottom: 40px;
   transition: all ease-in-out .4s;
   margin-left: 0;
+
+  &.main--overflow {
+    &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--cs-body-bg);
+        z-index: 111;
+        opacity: .9;
+    }
+  }
 }
 
 body {

@@ -1,6 +1,9 @@
 @include big-desktop {
     .create-wallet {
         .balance {
+            &__btns-group {
+                flex-wrap: wrap;
+            }
             &__items {
                 .item {
                     &__amount {
@@ -22,13 +25,12 @@
     }
     .create-wallet {
         .balance {
+            &__btns-group {
+                margin-top: 200px;
+            }
             &__block {
                 padding: 30px 20px;
                 min-height: inherit;
-
-                &-btn {
-                    margin-top: 200px;
-                }
             }
         }
         &__switcher {
@@ -54,6 +56,10 @@
     .create-wallet {
         .balance {
             grid-template-columns: 1fr;
+
+            &__btns-group {
+                flex-wrap: nowrap;
+            }
         }
     }
 }
@@ -90,6 +96,11 @@
             margin-bottom: 0;
         }
         .balance {
+            &__btns-group-extra {
+                max-width: 155px;
+                bottom: -170px;
+            }
+
             &__block {
                 padding: 0;
                 background: transparent;

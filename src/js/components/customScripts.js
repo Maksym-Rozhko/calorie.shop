@@ -127,4 +127,38 @@ document.addEventListener('DOMContentLoaded', () => {
             crateWalletContainer.classList.remove('d-none'); 
         })
     };
+
+    const accountCopyCode = document.querySelector('.account-number .account-number__code');
+    const accountCopyCodeBtn = document.querySelector('.account-number .account-number__copy');
+
+    if (accountCopyCodeBtn) {
+        accountCopyCodeBtn.addEventListener('click', () => {
+
+            navigator.clipboard.writeText(accountCopyCode.textContent)
+                .then(() => {
+                    accountCopyCodeBtn.classList.add('copied');
+                    setTimeout(function () {
+                        accountCopyCodeBtn.classList.remove('copied');
+                    }, 1500)
+                })
+        });
+    }
+
+    const balanceTransferBtn = document.querySelector('.balance-main .balance__transfer-btns');
+    const balanceTransferExtraBtns = document.querySelector('.balance-main .balance__btns-group-extra');
+    const mainOverflow = document.querySelector('.main');
+
+    if (balanceTransferBtn) {
+        balanceTransferBtn.addEventListener('click', () => {
+            mainOverflow.classList.add('main--overflow');
+            balanceTransferExtraBtns.classList.remove('d-none');
+        });
+
+        mainOverflow.addEventListener('click', e => {
+            if (e.target.classList.contains('main--overflow')) {
+                mainOverflow.classList.remove('main--overflow');
+                balanceTransferExtraBtns.classList.add('d-none');
+            }
+        });
+    }
 });

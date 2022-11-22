@@ -26,6 +26,15 @@
             <h2 class="balance__block-title">
                 Main
             </h2>
+            <div class="balance__account account-number d-none">
+                <span class="account-number__title">Account number:</span>
+                <div class="account-number__info">
+                    <span class="account-number__code">0777 5555 4444 2222</span>
+                    <button class="account-number__copy btn-reset" type="button">
+                        <span>Copied</span>
+                    </button>
+                </div>
+            </div>
             <div class="balance__items">
                 <div class="item">
                     <div class="item__icon">
@@ -53,11 +62,26 @@
                     <div class="item__status">BUSD (USDT)</div>
                 </div>
             </div>
-            <button class="balance__block-btn btn-reset" type="button">
-                <span class="icon-text">
-                    Transfer
-                </span>
-            </button>
+            <div class="balance__btns-group-extra d-none">
+                <a href="#" class="balance__block-btn transfer-other">
+                    To Other
+                </a>
+                <a href="#" class="balance__block-btn transfer-balance">
+                    To Balance
+                </a>
+            </div>
+            <div class="balance__btns-group">
+                <button class="balance__block-btn btn-reset balance__transfer-btns" type="button">
+                    <span class="icon-text">
+                        Transfer
+                    </span>
+                </button>
+                <button class="balance__block-btn btn-ocean btn-reset" type="button">
+                    <span class="icon-text">
+                        Receive
+                    </span>
+                </button>
+            </div>
         </div>
         <div id="history" class="balance__block balance-history">
             <h2 class="balance__block-title">

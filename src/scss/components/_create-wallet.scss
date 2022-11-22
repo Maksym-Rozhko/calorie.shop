@@ -1,6 +1,23 @@
 .wallet {
     min-height: 90vh;
 }
+
+.main--overflow {
+    .balance__block.balance-main {
+        position: relative;
+        z-index: 111;
+        background: transparent;
+        backdrop-filter: none;
+
+        .balance__block-title,
+        .balance__account,
+        .balance__items,
+        .balance__btns-group {
+            opacity: .2;
+        }
+    }
+}
+
 .create-wallet {
     margin-top: -30px;
 
@@ -86,6 +103,122 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
+
+        &__btns-group-extra.d-none {
+            opacity: 0;
+        }
+
+        &__btns-group-extra {
+            position: relative;
+            bottom: -110px;
+            width: 100%;
+            max-width: 220px;
+            opacity: 1;
+            transition: all ease-in-out .4s;
+
+            .transfer-other {
+                background: rgba(234, 235, 240, 0.05);
+                backdrop-filter: blur(30px);
+                margin-bottom: 10px;
+                position: relative;
+                transition: color ease-in-out 0.4s;
+                box-shadow: none;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 30px;
+                    padding: 1px;
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 14.71%, rgba(255, 255, 255, 0) 48.53%);
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    transition: 0.4s ease-in-out;
+                }
+
+                &:hover {
+                    color: var(--orange);
+                    box-shadow: none;
+
+                    &::before {
+                        background: linear-gradient(135deg, #fc502a 14.71%, rgba(255, 255, 255, 0) 48.53%);
+                    }
+                }
+            }
+        }
+
+        &__btns-group {
+            @include flex-all-center;
+            width: 100%;
+            gap: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        &__account {
+            @include flex-all-sb;
+            margin-bottom: 30px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .account-number {
+            flex-wrap: wrap;
+            gap: 10px;
+
+            &__title {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                color: var(--grey); 
+            }
+
+            &__code {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 170%;
+                color: rgba(234, 235, 240, 0.3);
+            }
+
+            &__info {
+                @include flex-v-center;
+            }
+
+            &__copy {
+                border-radius: 8px;
+                width: 25px;
+                height: 25px;
+                @include flex-all-center;
+                margin-left: 10px;
+                background-color: rgba(255, 255, 255, 0.05);
+                background-image: url('../images/icon/copy.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: auto;
+                position: relative;
+
+                span {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    opacity: 0;
+                    color: var(--grey);
+                    transition: all ease-in-out .4s;
+                }
+
+                &.copied {
+                    span {
+                        top: -25px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
         
         &__block {
             background: rgba(234, 235, 240, 0.02);
@@ -120,10 +253,6 @@
                 border-radius: 30px;
                 max-width: 325px;
                 width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: auto;
-                margin-bottom: 70px;
                 transition: all ease-in-out .4s;
 
                 &:hover {
@@ -146,6 +275,26 @@
                         left: 0;
                         top: 50%;
                         transform: translateY(-50%);
+                    }
+                }
+
+                &.btn-ocean {
+                    background-color: var(--ocean);
+
+                    &:hover {
+                        box-shadow: 0 0 15px var(--ocean);
+                    }
+
+                    .icon-text {
+                        padding-right: 22px;
+                        position: relative;
+    
+                        &::before {
+                            background-image: url('../images/icon/receive.svg');
+                            filter: brightness(.1) invert(1);
+                            left: inherit;
+                            right: 0;
+                        }
                     }
                 }
             }

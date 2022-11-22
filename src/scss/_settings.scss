@@ -112,7 +112,7 @@ body {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
-  width: 100%;
+  width: 98%;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -145,6 +145,12 @@ body {
   border: 1px solid rgba(255,255,255, .2);
 }
 ::-webkit-scrollbar-thumb:vertical:hover {background:var(--cs-main);}
+
+@media (min-width: 2000px) {
+  .wrapper {
+    max-width: 100%;
+  }
+}
 
 @include large-desktop {
   .wrapper {

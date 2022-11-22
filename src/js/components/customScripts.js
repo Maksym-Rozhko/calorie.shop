@@ -128,22 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     };
 
-    const accountCopyCode = document.querySelector('.account-number .account-number__code');
-    const accountCopyCodeBtn = document.querySelector('.account-number .account-number__copy');
-
-    if (accountCopyCodeBtn) {
-        accountCopyCodeBtn.addEventListener('click', () => {
-
-            navigator.clipboard.writeText(accountCopyCode.textContent)
-                .then(() => {
-                    accountCopyCodeBtn.classList.add('copied');
-                    setTimeout(function () {
-                        accountCopyCodeBtn.classList.remove('copied');
-                    }, 1500)
-                })
-        });
-    }
-
     const balanceTransferBtn = document.querySelector('.balance-main .balance__transfer-btns');
     const balanceTransferExtraBtns = document.querySelector('.balance-main .balance__btns-group-extra');
     const mainOverflow = document.querySelector('.main');

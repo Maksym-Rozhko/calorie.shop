@@ -1,3 +1,32 @@
+@include small-desktop {
+    .transfer-page {
+        .transfer {
+            &__forms-wrap {
+                flex-direction: column;
+            }  
+            &__amount-wrap {
+                flex-direction: row;
+                gap: 20px;
+            }
+            &__select {
+                max-width: 450px;
+    
+                .select2-container {
+                    max-width: 450px;
+                }
+            }
+            &__amount {
+                &.other {
+                    margin-bottom: 0;
+                }
+                &.amount {
+                    max-width: inherit;
+                }
+            }
+        }
+    }
+}
+
 @include middle-tablet {
     .transfer-page {
         &__container {
@@ -6,6 +35,10 @@
         
         .transfer {
             &__forms-wrap {
+                flex-direction: column;
+            }
+
+            &__selects-wrap {
                 flex-direction: column;
             }
 
@@ -45,6 +78,9 @@
                 gap: 45px;
                 margin-bottom: 50px;
             }
+            &__amount-wrap {
+                flex-direction: column;
+            }
     
             &__block {
                 padding: 26px 18px;
@@ -52,6 +88,19 @@
 
             &__fee {
                 margin-bottom: 230px;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .transfer-page {
+        .transfer {
+            &__block {
+                padding: 26px 10px;
+            }
+            &__blocks-wrap {
+                gap: 20px;
             }
         }
     }

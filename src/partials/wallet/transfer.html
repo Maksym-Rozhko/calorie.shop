@@ -12,23 +12,50 @@
                     <span class="transfer__title">From:</span>
                     <div class="tranfer__role">Balance</div>
                 </div>
+                <button type="button" class="transfer__btn btn-reset">
+                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.8 1.10718L12 4.85718H1.5" stroke="#EAEBF0" stroke-width="1.71429" stroke-linecap="round"/>
+                        <path d="M7.2 12.8928L3 9.14282H13.5" stroke="#EAEBF0" stroke-width="1.71429" stroke-linecap="round"/>
+                    </svg>
+                </button>
                 <div class="transfer__block">
                     <span class="transfer__title">To:</span>
-                    <div class="tranfer__role">Wallet</div>
+                    <div class="tranfer__role">
+                        <div class="transfer__select transfer__select-transfer-to">
+                            <select class="js-example-basic-single" name="transfer-to">
+                                <option value="0">Wallet</option>
+                                <option value="1">Other wallet</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="transfer__forms-wrap">
-                <div class="transfer__select">
-                    <select class="js-example-basic-single" name="transfer">
-                        <option value="0">Project Coin</option>
-                        <option value="1">Project Coin 2</option>
-                        <option value="2">Something else</option>
-                    </select>
+                <div class="transfer__selects-wrap">
+                    <div class="transfer__select transfer__select-coin">
+                        <select class="js-example-basic-single" name="transfer">
+                            <option value="0">Project Coin</option>
+                            <option value="1">Project Coin 2</option>
+                            <option value="2">Something else</option>
+                        </select>
+                    </div>
+                    <div class="transfer__select">
+                        <select class="js-example-basic-single" name="nft">
+                            <option value="0">NFT</option>
+                            <option value="1">NFT 1</option>
+                            <option value="2">Something else</option>
+                        </select>
+                    </div>
                 </div>
-                <label class="transfer__amount amount">
-                    <input type="number" class="amount__input" placeholder="Amount">
-                    <button class="amount__all btn-reset" type="button">All</button>
-                </label>
+                <div class="transfer__amount-wrap">
+                    <label class="transfer__amount other d-none">
+                        <input type="number" class="amount__input" placeholder="Other wallet number">
+                    </label>
+                    <label class="transfer__amount amount">
+                        <input type="number" class="amount__input" placeholder="Amount">
+                        <button class="amount__all btn-reset" type="button">All</button>
+                    </label>
+                </div>
             </div>
             <div class="transfer__fee">
                 <span class="transfer__fee-text">Fee:</span>

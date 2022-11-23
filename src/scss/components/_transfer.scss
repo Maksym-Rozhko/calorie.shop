@@ -159,18 +159,22 @@
         }
 
         &__select-coin {
-            &::before {
-                content: "";
-                position: absolute;
-                width: 30px;
-                height: 30px;
-                background-image: url('../images/icon/calorie.svg');
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: contain;
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
+            .field-transferform-token_accountid {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('../images/icon/calorie.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    left: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
             }
         }
 
@@ -335,4 +339,19 @@
             }
         }
     }
+}
+
+.select2-container--edited .select2-dropdown .select2-search,
+.select2-container--edited .select2-dropdown .select2-results__option--selected {
+    display: none;
+}
+
+.select2-container--edited .select2-dropdown {
+    max-width: 180px;
+    padding: 11px 32px;
+}
+
+.select2-container--edited .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: transparent;
+    color: var(--orange);
 }

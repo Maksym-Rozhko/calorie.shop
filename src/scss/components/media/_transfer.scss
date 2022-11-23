@@ -91,6 +91,10 @@
             }
         }
     }
+    .select2-container--edited .select2-dropdown {
+        padding: 15px;
+        min-width: 150px;
+    }
 }
 
 @media (max-width: 360px) {

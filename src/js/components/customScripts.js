@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // $('.js-example-basic-single').select2();
+    $('.js-example-basic-single').select2();
 
     $("#slider-range").slider({
         range: true,
@@ -143,6 +143,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainOverflow.classList.remove('main--overflow');
                 balanceTransferExtraBtns.classList.add('d-none');
             }
+        });
+    }
+
+    const transformToSelectWrap = document.querySelector('.transfer-page .transfer__select-transfer-to');
+
+    if (transformToSelectWrap) {
+        transformToSelectWrap.addEventListener('click', () => {
+            setTimeout(() => {
+                const transformToSelectDropdown = document.querySelectorAll('.select2-container');
+                transformToSelectDropdown[3]?.classList.add('select2-container--edited');
+            }, 0);
         });
     }
 });

@@ -192,10 +192,11 @@
     line-height: 18px;
     color: var(--cs-grey);
 }
-.select2-container--default .select2-results__option--selected {
+.select2-container--default .select2-results__option--selected,
+.select2-container--default .select2-results__option[aria-selected=true],
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
     background-color: transparent;
     color: var(--orange);
-    cursor: default;
 }
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
     color: var(--orange);

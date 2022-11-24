@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     function initCustoms() {
-        $('.js-example-basic-single').select2();
+        // $('.js-example-basic-single').select2();
 
         $("#slider-range").slider({
             range: true,

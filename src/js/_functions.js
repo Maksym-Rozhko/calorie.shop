@@ -31,7 +31,11 @@ import { enableScroll } from './functions/disable-scroll';
 
 // Реализация модального окна
 import GraphModal from 'graph-modal';
-const modal = new GraphModal();
+    window.modal = new GraphModal();
+
+$(document).on('pjax:complete', function(event) {
+    window.modal = new GraphModal();
+});
 
 // Реализация табов
 // import GraphTabs from 'graph-tabs';

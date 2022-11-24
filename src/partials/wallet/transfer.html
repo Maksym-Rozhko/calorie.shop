@@ -10,7 +10,14 @@
             <div class="transfer__blocks-wrap">
                 <div class="transfer__block">
                     <span class="transfer__title">From:</span>
-                    <div class="tranfer__role">Balance</div>
+                    <div class="tranfer__role">
+                        <div class="transfer__select transfer__select-transfer">
+                            <select class="js-example-basic-single" name="transfer-from">
+                                <option value="0">Balance</option>
+                                <option value="1">Wallet</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <button type="button" class="transfer__btn btn-reset">
                     <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +28,7 @@
                 <div class="transfer__block">
                     <span class="transfer__title">To:</span>
                     <div class="tranfer__role">
-                        <div class="transfer__select transfer__select-transfer-to">
+                        <div class="transfer__select transfer__select-transfer">
                             <select class="js-example-basic-single" name="transfer-to">
                                 <option value="0">Wallet</option>
                                 <option value="1">Other wallet</option>

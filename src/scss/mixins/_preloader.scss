@@ -1,0 +1,73 @@
+.preloader {
+    position: fixed;
+    z-index: 1111;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--cs-body-bg);
+    background-image: url('../images/preloader-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+    }
+
+    &::before {
+        background-image: url('../images/icon/stone-lg.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        max-width: 1140px;
+        width: 100%;
+        height: 355px;
+        top: 96px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: stone-lg 4s infinite linear;
+    }
+
+    &::after {
+        background-image: url('../images/icon/stone-sm.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        max-width: 480px;
+        width: 100%;
+        height: 150px;
+        top: 290px;
+        left: 50%;
+        transform: translateX(-70%);
+        animation: stone-sm 4s infinite linear;
+        animation-delay: .5s;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all ease-in-out 1.5s;    
+    }
+
+    &.preloader--active {
+        .preloader__logo {
+            opacity: 1;
+            transform: translate(-50%, -50%);  
+        }
+    }
+
+    &.remove {
+        animation: decreaseOpacity 4s infinite linear;
+
+        .preloader__logo {
+            opacity: 0;
+        }
+    }
+}

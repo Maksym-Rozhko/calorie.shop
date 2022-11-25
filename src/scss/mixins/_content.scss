@@ -1,3 +1,21 @@
+@mixin btn-transparent {
+
+    &:hover {
+
+    }
+}
+
+@mixin btn-link {
+
+    &:hover {
+
+    }
+}
+
+@mixin btn-animate {
+
+}
+
 @mixin title {
     margin-top: 0;
     margin-bottom: 0;

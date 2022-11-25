@@ -54,6 +54,53 @@ body.sidebar-offset {
         }
     }
 
+    .profile-auth {
+        @include flex-v-center;
+        gap: 5px;
+
+        &__link {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
+            letter-spacing: -0.03em;
+            color: var(--grey);
+            padding: 8px;
+            min-width: 80px;
+            border-radius: 30px;
+            position: relative;
+            transition: all ease-in-out .4s;
+
+            &:hover {
+                color: var(--orange);
+            }
+
+            &--signup {
+                background: rgba(234, 235, 240, 0.05);
+                backdrop-filter: blur(30px);
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 30px;
+                    padding: 1px;
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 14.71%, rgba(255, 255, 255, 0) 48.53%);
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    transition: 0.4s ease-in-out;
+                }
+
+                &:hover {
+                    &::before {
+                        background: linear-gradient(135deg, #fc502a 14.71%, rgba(255, 255, 255, 0) 48.53%);
+                    }
+                }
+            }
+        }
+    }
+
     .profile {
         position: relative;
         

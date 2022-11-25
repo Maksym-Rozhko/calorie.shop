@@ -408,7 +408,8 @@
         }
     }
 
-    .pending {
+    .pending,
+    .success {
         padding: 70px 40px;
         text-align: center;
 
@@ -417,7 +418,6 @@
             height: 80px;
             @include flex-all-center;
             border-radius: 50%;
-            background-color: var(--light-orange);
             margin: 0 auto;
         }
 
@@ -439,6 +439,18 @@
             margin-top: 0;
             margin-bottom: 0;
             color: var(--cs-grey);
+        }
+    }
+
+    .pending {
+        &__icon {
+            background-color: var(--light-orange);
+        }
+    }
+
+    .success {
+        &__icon {
+            background-color: var(--ocean);
         }
     }
 

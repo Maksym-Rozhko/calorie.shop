@@ -21,21 +21,21 @@ import { isMobile, isTablet, isDesktop } from './functions/check-viewport';
 // import './functions/fix-fullheight';
 
 // Реализация бургер-меню
-import { burger } from './functions/burger';
+// import { burger } from './functions/burger';
 
 // Реализация остановки скролла (не забудьте вызвать функцию)
-import { disableScroll } from './functions/disable-scroll';
+// import { disableScroll } from './functions/disable-scroll';
 
 // Реализация включения скролла (не забудьте вызвать функцию)
-import { enableScroll } from './functions/disable-scroll';
+// import { enableScroll } from './functions/disable-scroll';
 
 // Реализация модального окна
-import GraphModal from 'graph-modal';
-    window.modal = new GraphModal();
+// import GraphModal from 'graph-modal';
+//     window.modal = new GraphModal();
 
-$(document).on('pjax:complete', function(event) {
-    window.modal = new GraphModal();
-});
+// $(document).on('pjax:complete', function(event) {
+//     window.modal = new GraphModal();
+// });
 
 // Реализация табов
 // import GraphTabs from 'graph-tabs';

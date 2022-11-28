@@ -1,0 +1,183 @@
+@include big-desktop {
+    .profile-page {
+        .form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@include small-desktop {
+    .profile-page {
+        .form {
+            gap: 12px 20px;
+
+            .custom-checkbox {
+                &:not(:last-child) {
+                    padding-right: 18px;
+                    margin-right: 18px;
+                }
+            }    
+        }
+    }
+}
+
+@include tablet {
+    .sidebar-offset {
+        .profile-page {
+            .form {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+    .profile-page {
+        .form {
+            gap: 12px 20px;
+            
+            .custom-checkbox {
+                &:not(:last-child) {
+                    padding-right: 18px;
+                    margin-right: 18px;
+                }
+            }    
+        }
+    }
+}
+
+@include small-tablet {
+    .profile-page {
+        .form {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+@include mobile {
+    .profile-page {
+        &__container {
+            padding: 0;
+            background: transparent;
+            backdrop-filter: none;
+        }
+
+        .profile-edit-info {
+            display: none;
+            margin-top: 100px;
+        }
+
+        .profile-edit-info.profile-edit-show {
+            display: block;
+        }
+
+        .profile-stat-info {
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+            width: 100%;
+            margin-top: 30px;
+
+            .profile-page__top {
+                display: flex;
+                padding-bottom: 0;
+                border-bottom: none;
+                margin-bottom: 30px;
+            }
+
+            .logout {
+                margin-top: auto;
+                max-width: inherit;
+            }
+        }
+
+        &__edit-btn {
+            background: rgba(217, 217, 217, 0.1);
+            border-radius: 10px;
+            width: 34px;
+            height: 34px;
+            @include flex-all-center;
+            position: relative;
+    
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 10px;
+                padding: 1px;
+                background: linear-gradient(135deg,rgba(255,255,255,.4) 14.71%,rgba(255,255,255,0) 48.53%);
+                -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                z-index: -1;
+                transition: all ease-in-out .4s;
+            }
+
+            &:hover {
+                &::before {
+                    background: linear-gradient(135deg, #fc502a 14.71%, rgba(255, 255, 255, 0) 48.53%);
+                }
+            }
+        }
+
+        &__top {
+            display: none;
+        }
+
+        .profile-info {
+            &__wrap {
+                @include flex-all-sb;
+                flex-wrap: wrap;
+                gap: 10px;
+                padding-bottom: 5px;
+                margin-bottom: 15px;
+                border-bottom: 1px solid rgba(234, 235, 240, 0.1);
+
+                &--mt {
+                    margin-top: 40px;
+                }
+            }
+
+            &__title {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                color: rgba(234, 235, 240, 0.3);
+            }
+
+            &__value {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 21px;
+                color: var(--grey);
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+
+            .gender {
+                margin-top: 40px;
+            }
+            &__save {
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .profile-page {
+        .wrapper {
+            padding: 0 15px;
+        }
+        .profile {
+            &__wrap {
+                padding-right: 10px;
+            }
+            &__avatar {
+                margin-right: 8px;
+            }
+        }
+    }
+}

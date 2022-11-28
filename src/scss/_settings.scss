@@ -147,8 +147,13 @@ body {
 ::-webkit-scrollbar-thumb:vertical:hover {background:var(--cs-main);}
 
 @media (min-width: 2000px) {
-  .wrapper {
+  .wrapper,
+  body:not(.sidebar-offset) .wrapper {
     max-width: 100%;
+  }
+
+  body:not(.sidebar-offset) .wrapper {
+    padding: 0 25px;
   }
 }
 

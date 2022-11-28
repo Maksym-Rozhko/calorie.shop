@@ -155,6 +155,26 @@ document.addEventListener('DOMContentLoaded', () => {
         //         }, 0);
         //     });
         // }
+
+        const profileEditBtn = document.querySelector('.profile-page .profile-page__edit-btn');
+        const profileEditInfoBlock = document.querySelector('.profile-page .profile-stat-info');
+        const profileEditFormBlock = document.querySelector('.profile-page .profile-edit-info');
+        const profileEditForm= document.querySelector('.profile-page .profile-edit-info .form');
+
+        if (profileEditBtn) {
+            profileEditBtn.addEventListener('click', () => {
+                profileEditInfoBlock.classList.add('d-none');
+                profileEditFormBlock.classList.add('profile-edit-show');
+            });
+        }
+
+        if (profileEditForm) {
+            profileEditForm.addEventListener('submit', () => {
+                profileEditInfoBlock.classList.remove('d-none');
+                profileEditFormBlock.classList.remove('profile-edit-show');
+            });
+        }
+        
     }
 
     initCustoms();

@@ -6,6 +6,27 @@
         @include flex-all-center;
         flex-direction: column;
         padding: 166px 25px;
+
+        .preloader {
+            background-color: transparent;
+            background-image: none;
+
+            &::before,
+            &::after {
+                z-index: -1;
+            }
+
+            &::before {
+                max-width: 734px;
+                height: 255px;
+                top: 60px;
+            }
+            &::after {
+                max-width: 310px;
+                height: 96px;
+                top: 200px;
+            }
+        }
     }
 
     &__title {

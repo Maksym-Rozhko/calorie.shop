@@ -102,6 +102,28 @@
                 font-size: 20px;
             }
         }
+        .choose-nft {
+            .balance-nft {
+                margin-top: 0;
+
+                .item {
+                    padding: 15px 10px;
+
+                    &__status {
+                        max-width: 160px;
+                    }
+                    &__amount {
+                        margin-left: 10px;
+                        padding-left: 10px;
+
+                        .amount {
+                            margin-left: 10px;
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
         &__btn-text {
             &::after {
                 width: 35px;
@@ -122,6 +144,24 @@
                 font-size: 12px;
                 .price {
                     font-size: 18px;
+                }
+            }
+        }
+        .choose-nft {
+            .balance-nft {
+                padding-right: 10px;
+                margin-right: -10px;
+
+                .item {
+                    &__amount {
+                        font-size: 12px;
+                    }
+                    &__labels {
+                        &-label {
+                            font-size: 10px;
+                            padding: 5px 10px;
+                        }
+                    }
                 }
             }
         }

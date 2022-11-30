@@ -89,7 +89,7 @@
             max-width: 200px;
         }
     }
-    
+
     .order-modal.no-funds {
         padding: 70px 40px;
 
@@ -225,7 +225,7 @@
             margin-right: auto;
             max-width: 427px;
         }
-        
+
         &__list {
             padding-left: 0;
             margin-top: 0;
@@ -386,10 +386,10 @@
                         mask-composite: exclude;
                         transition: 0.4s ease-in-out;
                     }
-        
+
                     &:hover {
                         color: var(--orange);
-        
+
                         &::before {
                             background: linear-gradient(135deg, #fc502a 14.71%, rgba(255, 255, 255, 0) 48.53%);
                         }
@@ -404,7 +404,7 @@
                         box-shadow: 0 0 15px var(--orange);
                     }
                 }
-            }    
+            }
         }
     }
 
@@ -535,6 +535,60 @@
 
                 &:hover {
                     box-shadow: 0 0 15px var(--orange);
+                }
+            }
+        }
+    }
+
+    .choose-nft {
+        .balance-nft {
+            .balance__items {
+                max-height: 396px;
+
+                .item {
+                    opacity: .5;
+                    position: relative;
+                    cursor: pointer;
+                    transition: opacity ease-in-out .4s;
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 10px;
+                        top: 10px;
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 4px;
+                    }
+
+                    &::before {
+                        background: rgba(234, 235, 240, 0.1);
+                    }
+
+                    &::after {
+                        background-color: var(--orange);
+                        background-image: url('../../images/icon/checkbox.svg');
+                        background-position: center;
+                        background-size: auto;
+                        background-repeat: no-repeat;
+                        opacity: 0;
+                        transition: opacity ease-in-out .4s;
+                    }
+
+                    &__icon {
+                        .icon {
+                            min-width: 62px;
+                        }
+                    }
+
+                    &.item--checked {
+                        opacity: 1;
+
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
                 }
             }
         }

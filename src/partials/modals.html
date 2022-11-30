@@ -51,7 +51,7 @@
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_705_11583" result="shape"/>
                         </filter>
                         </defs>
-                    </svg>                                                    
+                    </svg>
                 </div>
                 <div class="order-modal__info">
                     <div class="order-modal__price">
@@ -86,7 +86,7 @@
                 <h2 class="import-wallet__title">
                     Please write down this 12 word seed<br>
                     phrase in a place you trust
-                </h2>                    
+                </h2>
                 <p class="import-wallet__text">
                     Please write down this 12 word seed
                     phrase in a place you trust
@@ -94,7 +94,7 @@
                 <label class="custom-checkbox">
                     <input type="checkbox" name="seed-phrase" class="custom-checkbox__field" required="">
                     <span class="custom-checkbox__content">
-                        I acknowledge the information provided 
+                        I acknowledge the information provided
                         and ready to write the seed phrase
                     </span>
                 </label>
@@ -110,7 +110,7 @@
                 New Wallet
             </h2>
             <p class="seed-phrase__text">
-                We won't be able to restore your access to the wallet if you 
+                We won't be able to restore your access to the wallet if you
                 loose your seed phrase, So keep it wisely and never loose
             </p>
             <ol class="seed-phrase__list">
@@ -129,7 +129,7 @@
             </ol>
             <div class="seed-phrase__btns-group">
                 <button class="btn-reset graph-modal__btn-copy seed-phrase__copy">
-                    Copy phrase 
+                    Copy phrase
                     <span>Copied</span>
                 </button>
                 <button type="button" class="btn-reset graph-modal__btn-next graph-modal-close" aria-label="Закрыть модальное окно">
@@ -179,10 +179,10 @@
                     <path d="M19.6675 1.94434C16.1624 1.94434 12.736 2.98373 9.8216 4.93107C6.9072 6.87841 4.6357 9.64625 3.29434 12.8846C1.95299 16.1229 1.60203 19.6862 2.28585 23.124C2.96966 26.5618 4.65754 29.7196 7.13604 32.1981C9.61454 34.6766 12.7723 36.3644 16.2101 37.0483C19.6479 37.7321 23.2112 37.3811 26.4495 36.0398C29.6879 34.6984 32.4557 32.4269 34.403 29.5125C36.3504 26.5981 37.3898 23.1717 37.3898 19.6666C37.3842 14.968 35.5153 10.4635 32.1929 7.14118C28.8706 3.81882 24.3661 1.94988 19.6675 1.94434ZM19.6675 34.1666C16.7997 34.1666 13.9963 33.3162 11.6118 31.7229C9.22726 30.1296 7.36876 27.865 6.27129 25.2155C5.17382 22.5659 4.88667 19.6505 5.44616 16.8378C6.00564 14.025 7.38663 11.4414 9.41449 9.41351C11.4424 7.38565 14.026 6.00466 16.8387 5.44517C19.6515 4.88569 22.5669 5.17283 25.2165 6.27031C27.866 7.36778 30.1306 9.22628 31.7239 11.6108C33.3171 13.9953 34.1675 16.7987 34.1675 19.6666C34.1629 23.5108 32.6337 27.1962 29.9154 29.9144C27.1972 32.6327 23.5117 34.1619 19.6675 34.1666Z" fill="#EAEBF0"/>
                     <path d="M21.275 18.9999V10.0003C21.275 9.57298 21.1052 9.16319 20.8031 8.86104C20.5009 8.5589 20.0911 8.38916 19.6638 8.38916C19.2366 8.38916 18.8268 8.5589 18.5246 8.86104C18.2225 9.16319 18.0527 9.57298 18.0527 10.0003V19.6669C18.0528 20.0942 18.2226 20.5039 18.5248 20.806L23.3581 25.6393C23.662 25.9328 24.069 26.0952 24.4914 26.0915C24.9138 26.0879 25.3179 25.9184 25.6166 25.6197C25.9153 25.321 26.0848 24.9169 26.0884 24.4945C26.0921 24.072 25.9297 23.6651 25.6362 23.3612L21.275 18.9999Z" fill="#EAEBF0"/>
                 </svg>
-            </div>    
+            </div>
             <h3 class="pending__title">
                 Pending
-            </h3>            
+            </h3>
             <p class="pending__text">
                 your transaction is in progress
             </p>
@@ -213,14 +213,180 @@
             <div class="success__icon">
                 <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 13.56L7.83333 19L22 2" stroke="#EAEBF0" stroke-width="3" stroke-linecap="round"/>
-                </svg>                    
-            </div>    
+                </svg>
+            </div>
             <h3 class="success__title">
                 Successful
-            </h3>            
+            </h3>
             <p class="success__text">
                 your transaction successful
             </p>
+        </div>
+    </div>
+    <div class="graph-modal__container confirm-transfer create-wallet choose-nft" role="dialog" aria-modal="true" data-graph-target="choose-nft">
+        <div class="graph-modal__content balance-nft">
+            <h3 class="confirm-transfer__title">
+                Сhoose your NFT
+            </h3>
+            <form action="#" class="form">
+                <div class="balance__items">
+                    <label class="item item--legendary">
+                        <input class="checkbox visually-hidden" type="checkbox" name="nft">
+                        <span class="item__status">Legendary / 100</span>
+                        <div class="item__icon">
+                            <img class="icon" src="images/icon/sneakers-1.svg" alt="sneakers">
+                        </div>
+                        <div class="item__amount">
+                            <div class="amount">Code:</div>
+                            <div class="code">
+                                № 72184782
+                            </div>
+                            <div class="item__labels">
+                                <span class="item__labels-label">Runner</span>
+                                <span class="item__labels-label">Universal</span>
+                            </div>
+                        </div>
+                        <div class="item__labels">
+                            <span class="item__labels-label">Runner</span>
+                            <span class="item__labels-label">Universal</span>
+                        </div>
+                    </label>
+                    <label class="item item--uncommon">
+                        <input class="checkbox visually-hidden" type="checkbox" name="nft">
+                        <span class="item__status">uncommon / 45</span>
+                        <div class="item__icon">
+                            <img class="icon" src="images/icon/sneakers-2.svg" alt="sneakers">
+                        </div>
+                        <div class="item__amount">
+                            <div class="amount">Code:</div>
+                            <div class="code">
+                                № 72184782
+                            </div>
+                            <div class="item__labels">
+                                <span class="item__labels-label">Runner</span>
+                                <span class="item__labels-label">Universal</span>
+                            </div>
+                        </div>
+                        <div class="item__labels">
+                            <span class="item__labels-label">Runner</span>
+                            <span class="item__labels-label">Universal</span>
+                        </div>
+                    </label>
+                    <label class="item item--rare">
+                        <input class="checkbox visually-hidden" type="checkbox" name="nft">
+                        <span class="item__status">rare / 80</span>
+                        <div class="item__icon">
+                            <img class="icon" src="images/icon/sneakers-3.svg" alt="sneakers">
+                        </div>
+                        <div class="item__amount">
+                            <div class="amount">Code:</div>
+                            <div class="code">
+                                № 72184782
+                            </div>
+                            <div class="item__labels">
+                                <span class="item__labels-label">Runner</span>
+                                <span class="item__labels-label">Universal</span>
+                            </div>
+                        </div>
+                        <div class="item__labels">
+                            <span class="item__labels-label">Runner</span>
+                            <span class="item__labels-label">Universal</span>
+                        </div>
+                    </label>
+                    <label class="item item--common">
+                        <input class="checkbox visually-hidden" type="checkbox" name="nft">
+                        <span class="item__status">common / 15</span>
+                        <div class="item__icon">
+                            <img class="icon" src="images/icon/sneakers-4.svg" alt="sneakers">
+                        </div>
+                        <div class="item__amount">
+                            <div class="amount">Code:</div>
+                            <div class="code">
+                                № 72184782
+                            </div>
+                            <div class="item__labels">
+                                <span class="item__labels-label">Runner</span>
+                                <span class="item__labels-label">Universal</span>
+                            </div>
+                        </div>
+                        <div class="item__labels">
+                            <span class="item__labels-label">Runner</span>
+                            <span class="item__labels-label">Universal</span>
+                        </div>
+                    </label>
+                    <label class="item item--common">
+                        <input class="checkbox visually-hidden" type="checkbox" name="nft">
+                        <span class="item__status">common / 15</span>
+                        <div class="item__icon">
+                            <img class="icon" src="images/icon/sneakers-4.svg" alt="sneakers">
+                        </div>
+                        <div class="item__amount">
+                            <div class="amount">Code:</div>
+                            <div class="code">
+                                № 72184782
+                            </div>
+                            <div class="item__labels">
+                                <span class="item__labels-label">Runner</span>
+                                <span class="item__labels-label">Universal</span>
+                            </div>
+                        </div>
+                        <div class="item__labels">
+                            <span class="item__labels-label">Runner</span>
+                            <span class="item__labels-label">Universal</span>
+                        </div>
+                    </label>
+                    <label class="item item--legendary">
+                        <input class="checkbox visually-hidden" type="checkbox" name="nft">
+                        <span class="item__status">legendary / 100</span>
+                        <div class="item__icon">
+                            <img class="icon" src="images/icon/sneakers-1.svg" alt="sneakers">
+                        </div>
+                        <div class="item__amount">
+                            <div class="amount">Code:</div>
+                            <div class="code">
+                                № 72184782
+                            </div>
+                            <div class="item__labels">
+                                <span class="item__labels-label">Runner</span>
+                                <span class="item__labels-label">Universal</span>
+                            </div>
+                        </div>
+                        <div class="item__labels">
+                            <span class="item__labels-label">Runner</span>
+                            <span class="item__labels-label">Universal</span>
+                        </div>
+                    </label>
+                    <label class="item item--epic">
+                        <input class="checkbox visually-hidden" type="checkbox" name="nft">
+                        <span class="item__status">epic / 28</span>
+                        <div class="item__icon">
+                            <img class="icon" src="images/icon/sneakers-2.svg" alt="sneakers">
+                        </div>
+                        <div class="item__amount">
+                            <div class="amount">Code:</div>
+                            <div class="code">
+                                № 72184782
+                            </div>
+                            <div class="item__labels">
+                                <span class="item__labels-label">Runner</span>
+                                <span class="item__labels-label">Universal</span>
+                            </div>
+                        </div>
+                        <div class="item__labels">
+                            <span class="item__labels-label">Runner</span>
+                            <span class="item__labels-label">Universal</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="confirm-transfer__btns-group transfer-btns">
+                    <button type="button" class="btn-reset transfer-btns__btn transfer-btns__btn--close graph-modal-close" aria-label="Закрыть модальное окно">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-reset transfer-btns__btn transfer-btns__btn--confirm">
+                        Сonfirm
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -1,16 +1,29 @@
+@include big-desktop {
+    .transfer-page {
+        .transfer {
+            &__selects-wrap {
+                padding: 12px;
+            }
+        }
+    }
+}
+
 @include small-desktop {
     .transfer-page {
         .transfer {
             &__forms-wrap {
                 flex-direction: column;
-            }  
+            }
             &__amount-wrap {
                 flex-direction: row;
                 gap: 20px;
             }
+            &__nft-preview {
+                max-width: 450px;
+            }
             &__select {
                 max-width: 450px;
-    
+
                 .select2-container {
                     max-width: 450px;
                 }
@@ -32,7 +45,7 @@
         &__container {
             padding: 100px 15px;
         }
-        
+
         .transfer {
             &__forms-wrap {
                 flex-direction: column;
@@ -54,6 +67,21 @@
                     width: 100%;
                     left: 0;
                     top: -20px;
+                }
+            }
+            &__switcher {
+                max-width: 300px;
+                .switcher {
+                    max-width: 142px;
+                }
+
+                &-btn {
+                    max-width: 142px;
+                    &--active {
+                        & + .switcher {
+                            transform: translateX(148px);
+                        }
+                    }
                 }
             }
         }
@@ -81,7 +109,7 @@
             &__amount-wrap {
                 flex-direction: column;
             }
-    
+
             &__block {
                 padding: 26px 18px;
             }
@@ -91,10 +119,28 @@
             }
         }
     }
-    // .select2-container--edited .select2-dropdown {
-    //     padding: 15px;
-    //     min-width: 150px;
-    // }
+}
+
+@include small-mobile {
+    .transfer-page {
+        .transfer {
+            &__switcher {
+                max-width: 250px;
+                .switcher {
+                    max-width: 116px;
+                }
+
+                &-btn {
+                    max-width: 116px;
+                    &--active {
+                        & + .switcher {
+                            transform: translateX(124px);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 360px) {

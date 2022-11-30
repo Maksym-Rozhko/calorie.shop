@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     window.initCustoms = function() {
-        // $('.js-example-basic-single').select2();
+        $('.js-example-basic-single').select2();
 
         $("#slider-range").slider({
             range: true,
@@ -187,10 +187,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const chooseNftModalFormInputs = document.querySelectorAll('.choose-nft .balance__items .checkbox');
 
+        function removeCheckedNft() {
+            chooseNftModalFormInputs.forEach(item => item.parentElement.classList.remove('item--checked'));
+        }
+
         if (chooseNftModalFormInputs) {
             chooseNftModalFormInputs.forEach(item => {
                 item.addEventListener('input', () => {
-                    item.checked ? item.parentElement.classList.add('item--checked') : item.parentElement.classList.remove('item--checked');
+                    if (item.checked) {
+                        removeCheckedNft();
+                        item.parentElement.classList.add('item--checked')
+                    }
+                });
+            });
+        }
+
+        const transferSwitcherElems = document.querySelectorAll('.transfer__switcher .transfer__switcher-btn');
+        const transferSwitcherContnet = document.querySelectorAll('.transfer__selects-wrap .transfer__switcher-content');
+
+        if (transferSwitcherElems) {
+            const removeContentsActiveClass = () => transferSwitcherContnet.forEach(content => content.classList.add('d-none'));
+            const removeBtnsActiveClass = () => transferSwitcherElems.forEach(btn => btn.classList.remove('transfer__switcher-btn--active'));
+
+
+
+            transferSwitcherElems.forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    if (btn.dataset.catalog === transferSwitcherContnet[i].id) {
+                        removeBtnsActiveClass();
+                        btn.classList.add('transfer__switcher-btn--active');
+
+                        if (!btn.classList.contains('create-wallet__tabs-btn')) {
+                            removeContentsActiveClass();
+                            transferSwitcherContnet[i].classList.remove('d-none');
+                        } else {
+                            transferSwitcherContnet[i].classList.add('d-none');
+                        }
+                    }
                 });
             });
         }

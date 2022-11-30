@@ -39,7 +39,16 @@
             </div>
             <div class="transfer__forms-wrap">
                 <div class="transfer__selects-wrap">
-                    <div class="transfer__select transfer__select-coin">
+                    <div class="transfer__switcher">
+                        <button data-catalog="token" class="transfer__switcher-btn btn-reset transfer__switcher-btn--active" type="button">
+                            Token
+                        </button>
+                        <button data-catalog="nft" class="transfer__switcher-btn btn-reset" type="button" data-graph-path="choose-nft">
+                            NFT
+                        </button>
+                        <span class="switcher"></span>
+                    </div>
+                    <div id="token" class="transfer__switcher-content transfer__select transfer__select-coin">
                         <div class="form-group field-transferform-token_accountid">
                             <select class="js-example-basic-single" name="transfer">
                                 <option value="0">Project Coin</option>
@@ -48,12 +57,21 @@
                             </select>
                         </div>
                     </div>
-                    <div class="transfer__select">
-                        <select class="js-example-basic-single" name="nft">
-                            <option value="0">NFT</option>
-                            <option value="1">NFT 1</option>
-                            <option value="2">Something else</option>
-                        </select>
+                    <div id="nft" class="transfer__switcher-content transfer__nft-preview d-none">
+                        <div class="transfer__nft-preview-wrap preview">
+                            <div class="preview__image">
+                                <img class="image" src="images/icon/sneakers-1.svg" alt="sneakers">
+                            </div>
+                            <div class="preview__info">
+                                Code: <span class="code">№ 72184782</span>
+                            </div>
+                            <button type="button" class="preview__choose btn-reset" data-graph-path="choose-nft" title="change nft">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.8 1.10718L12 4.85718H1.5" stroke="#EAEBF0" stroke-width="1.71429" stroke-linecap="round"/>
+                                    <path d="M7.2 12.8928L3 9.14282H13.5" stroke="#EAEBF0" stroke-width="1.71429" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="transfer__amount-wrap">

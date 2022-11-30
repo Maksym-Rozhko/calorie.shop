@@ -389,4 +389,28 @@
             </form>
         </div>
     </div>
+    <div class="graph-modal__container confirm-transfer enter-password" role="dialog" aria-modal="true" data-graph-target="enter-password">
+        <div class="graph-modal__content balance-nft">
+            <h3 class="confirm-transfer__title">
+                Enter your wallet password
+            </h3>
+            <form action="#" class="form">
+                <label class="form__label form__label--password">
+                    <input type="password" class="form__input" placeholder="Enter your password" required="">
+                    <svg class="icon">
+                        <use xlink:href="images/sprite.svg#lock"></use>
+                    </svg>
+                    <span class="form-incorrect">*Incorrect password</span>
+                </label>
+                <div class="confirm-transfer__btns-group transfer-btns">
+                    <button type="button" class="btn-reset transfer-btns__btn transfer-btns__btn--close graph-modal-close" aria-label="Закрыть модальное окно">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-reset transfer-btns__btn transfer-btns__btn--confirm">
+                        Сonfirm
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

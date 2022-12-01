@@ -1,6 +1,6 @@
 <div class="auth">
     <div class="auth__wrapper">
-        <div class="auth__welcome">
+        <div class="auth__welcome d-none">
             <a href="#" class="logo">
                 <img src="images/icon/logo.svg" alt="Calorie burn to life">
             </a>
@@ -60,7 +60,7 @@
             </div>
             <div class="auth__bottom">
                 <p class="auth__bottom-text">
-                    I don't have an account yet 
+                    I don't have an account yet
                     <a href="#" class="auth__link">Sign up</a>
                 </p>
             </div>
@@ -91,6 +91,33 @@
                     </div>
                     <button type="submit" class="form__btn sign-up__btn">
                         Sign up
+                    </button>
+                </form>
+            </div>
+            <div class="auth__bottom">
+                <p class="auth__bottom-text">
+                    I already have an account
+                    <a href="#" class="auth__link">Sign in</a>
+                </p>
+            </div>
+        </div>
+        <div class="recover-pass">
+            <div class="auth__container">
+                <h2 class="auth__title">
+                    Recover&nbsp;my<br> password
+                </h2>
+                <p class="auth__descript">
+                    Please enter your email address below to receive instructions for resetting password
+                </p>
+                <form action="#" class="form">
+                    <label class="form__label form__label--email">
+                        <input type="email" class="form__input" placeholder="E-mail" required="">
+                        <svg class="icon">
+                            <use xlink:href="images/sprite.svg#mail"></use>
+                        </svg>
+                    </label>
+                    <button type="submit" class="form__btn sign-up__btn">
+                        Reset password
                     </button>
                 </form>
             </div>

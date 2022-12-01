@@ -1,4 +1,11 @@
 @include mobile {
+    .recover-pass {
+        .auth__title {
+            br {
+                display: block;
+            }
+        }
+    }
     .auth {
         &__welcome {
             .logo {
@@ -10,7 +17,7 @@
                 margin-bottom: auto;
             }
         }
-    
+
         .welcome {
             &__text {
                 margin-top: 10px;
@@ -44,7 +51,7 @@
             margin-bottom: auto;
             padding-top: 12px;
             padding-bottom: 0;
-    
+
             .auth__link {
                 display: block;
             }

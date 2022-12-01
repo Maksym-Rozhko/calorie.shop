@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     window.initCustoms = function() {
-        $('.js-example-basic-single').select2();
+        // $('.js-example-basic-single').select2();
 
         $("#slider-range").slider({
             range: true,
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let seedPhrase = '';
 
                 seedPhraseList.forEach(li => {
-                    seedPhrase += ` ${li.textContent}`;
+                    seedPhrase += `${li.textContent} `;
                 });
 
                 navigator.clipboard.writeText(seedPhrase)
@@ -86,35 +86,58 @@ document.addEventListener('DOMContentLoaded', () => {
         const seedPhraseWordsChoosedArea = document.querySelector('.seed-phrase-page .form__area');
         const seedPhraseWordsInput = document.querySelector('.seed-phrase-page .form__seed-phrase-input');
         const seedPhraseWordsSubmitBtn = document.querySelector('.seed-phrase-page .form .form__submit');
+        let indexPhraseWords = 0;
 
         if (seedPhraseWords) {
             seedPhraseWords.forEach((word, i) => {
                 word.addEventListener('click', () => {
-                    word.classList.add('word-choosed');
-                    seedPhraseWordsChoosedArea.innerHTML += `
-                        <span>${word.textContent}</span>
-                    `;
-                    seedPhraseWordsInput.value += ` ${word.textContent}`;
 
-                    seedPhraseWordsInput.value === seedPhraseModalCopy ? seedPhraseWordsSubmitBtn.classList.add('submit-active') : seedPhraseWordsSubmitBtn.classList.remove('submit-active');
+                    if (seedPhraseModalCopy.split(' ')[indexPhraseWords] === word.textContent) {
+                        indexPhraseWords++;
+                        word.classList.add('word-choosed');
+                            seedPhraseWordsChoosedArea.innerHTML += `
+                            <span>${word.textContent}</span>
+                        `;
+                        seedPhraseWordsInput.value += `${word.textContent} `;
+                        seedPhraseWords.forEach(word => {word.classList.remove('word-incorrect')});
+                    } else {
+                        seedPhraseWords.forEach(word => {word.classList.remove('word-incorrect')});
+                        word.classList.add('word-incorrect');
+                    }
+
+
+                    if (seedPhraseWordsInput.value === seedPhraseModalCopy) {
+                        seedPhraseWordsSubmitBtn.classList.add('submit-active');
+                        seedPhraseWordsSubmitBtn.removeAttribute('disabled');
+                    } else {
+                        seedPhraseWordsSubmitBtn.classList.remove('submit-active');
+                        seedPhraseWordsSubmitBtn.setAttribute('disabled', 'disabled');
+                    }
                 });
             });
 
-            seedPhraseWordsChoosedArea?.addEventListener('click', e => {
-                const target = e.target;
+            // seedPhraseWordsChoosedArea?.addEventListener('click', e => {
+            //     const target = e.target;
 
-                if (target.tagName === 'SPAN') {
-                    target.remove();
+            //     if (target.tagName === 'SPAN') {
+            //         target.remove();
 
-                    seedPhraseWords.forEach(word => {
-                        if (word.textContent === target.textContent) {
-                            word.classList.remove('word-choosed');
-                            seedPhraseWordsInput.value = seedPhraseWordsInput.value.replace(` ${target.textContent}`, '');
-                            seedPhraseWordsInput.value === seedPhraseModalCopy ? seedPhraseWordsSubmitBtn.classList.add('submit-active') : seedPhraseWordsSubmitBtn.classList.remove('submit-active');
-                        }
-                    });
-                }
-            });
+            //         seedPhraseWords.forEach(word => {
+            //             if (word.textContent === target.textContent) {
+            //                 word.classList.remove('word-choosed');
+            //                 seedPhraseWordsInput.value = seedPhraseWordsInput.value.replace(` ${target.textContent}`, '');
+
+            //                 if (seedPhraseWordsInput.value === seedPhraseModalCopy) {
+            //                     seedPhraseWordsSubmitBtn.classList.add('submit-active');
+            //                     seedPhraseWordsSubmitBtn.removeAttribute('disabled');
+            //                 } else {
+            //                     seedPhraseWordsSubmitBtn.classList.remove('submit-active');
+            //                     seedPhraseWordsSubmitBtn.setAttribute('disabled', 'disabled');
+            //                 }
+            //             }
+            //         });
+            //     }
+            // });
 
             seedPhraseModalNextBtn?.addEventListener('click', () => {
                 seedPhraseWordsContainer.classList.remove('d-none');

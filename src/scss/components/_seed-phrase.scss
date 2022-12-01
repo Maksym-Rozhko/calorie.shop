@@ -92,7 +92,7 @@
                 color: var(--grey);
                 display: inline-block;
                 position: relative;
-                cursor: pointer;
+                // cursor: pointer;
 
                 &::after {
                     content: "";
@@ -124,6 +124,7 @@
                 letter-spacing: -0.05em;
                 color: rgba(234, 235, 240, 0.3);
                 background: rgba(234, 235, 240, 0.05);
+                border: 1px solid transparent;
                 border-radius: 30px;
                 padding: 8px;
                 cursor: pointer;
@@ -133,6 +134,10 @@
                     color: var(--grey);
                     cursor: default;
                     pointer-events: none;
+                }
+                &.word-incorrect {
+                    color: var(--red);
+                    border: 1px solid var(--red);
                 }
             }
         }

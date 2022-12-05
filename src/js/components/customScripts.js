@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const seedPhraseList = document.querySelectorAll('.seed-phrase .seed-phrase__list li');
         const seedPhraseBtnCopy = document.querySelector('.seed-phrase .seed-phrase__copy');
+        const seedPhraseNextBtn = document.querySelector('.seed-phrase .graph-modal__btn-next');
         let seedPhraseModalCopy = '';
 
         if (seedPhraseBtnCopy) {
@@ -78,6 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        if (seedPhraseNextBtn) {
+            seedPhraseNextBtn.addEventListener('click', () => {
+                seedPhraseList.forEach(li => seedPhraseModalCopy += `${li.textContent} `);
+            });
+        }
+
         const crateWalletContainer = document.querySelector('.wallet .create-wallet');
         const seedPhraseWordsContainer = document.querySelector('.wallet .seed-phrase-page');
         const seedPhraseWordsReturnLink = document.querySelector('.wallet .seed-phrase-page .return-link');
@@ -91,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (seedPhraseWords) {
             seedPhraseWords.forEach((word, i) => {
                 word.addEventListener('click', () => {
-
+                    console.log(seedPhraseModalCopy);
                     if (seedPhraseModalCopy.split(' ')[indexPhraseWords] === word.textContent) {
                         indexPhraseWords++;
                         word.classList.add('word-choosed');

@@ -59,7 +59,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 40px 35px;
         counter-reset: list;
-        
+
     }
 
     &__block {
@@ -103,7 +103,8 @@
         max-width: 335px;
         width: 100%;
 
-        .select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
+        .select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+        .select2-container--default.select2-container--open.select2-container--above .select2-selection--single {
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
         }
@@ -246,7 +247,7 @@
             box-shadow: 0 0 15px rgba(234, 235, 240, 0.1);
         }
     }
-    
+
     &__search {
         background-color: var(--orange);
 

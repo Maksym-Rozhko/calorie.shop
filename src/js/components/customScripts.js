@@ -257,6 +257,67 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
+
+        const importItemsInput = document.querySelectorAll('.import .import__items .import__item .form__input');
+        const importWalletNextStepBtn = document.querySelector('.import .graph-modal__btn-next');
+
+
+        function checkEmptyInput(inputs) {
+            inputs.forEach(input => input.value !== '' ? importWalletNextStepBtn.removeAttribute('disabled') : importWalletNextStepBtn.setAttribute('disabled', 'disabled'));
+        }
+
+        if (importItemsInput) {
+            importItemsInput.forEach((input, i) => {
+                input.addEventListener('input', () => {
+                    let importPhrase = input.value;
+
+                    importPhrase = importPhrase.split(' ').filter(({ length }) => length);
+
+                    if (importPhrase.length === 12) {
+                        for (let index = 0; index < importItemsInput.length; index++) {
+                            importItemsInput[index].value = importPhrase[index];
+                        }
+                    }
+
+                    document.addEventListener('keyup', e => {
+                        if (e.code === 'ControlLeft' || e.code === 'MetaLeft' || e.code === 'ControlRight' || e.code === 'MetaRight') {
+                            importItemsInput.forEach((input, i) => {
+                                input.value = importPhrase[i] ? importPhrase[i] : '';
+                            });
+
+                            checkEmptyInput(importItemsInput);
+                        }
+                    });
+                    checkEmptyInput(importItemsInput);
+                });
+            });
+        }
+
+        const newPasswordInputs = document.querySelectorAll('.new-password .form__input');
+        const newPasswordInput = document.querySelector('.new-password .form__input.input-password');
+        const newPasswordConfirmInput = document.querySelector('.new-password .form__input.input-password-confirm');
+        const newPasswordDontMatchMessage = document.querySelector('.new-password .form__label--password .form-incorrect');
+        const newPasswordSubmitConfirm = document.querySelector('.new-password .transfer-btns__btn--confirm');
+
+        function checkInputMatches() {
+            if (newPasswordInput.value === newPasswordConfirmInput.value) {
+                newPasswordSubmitConfirm.removeAttribute('disabled');
+                newPasswordDontMatchMessage.style.opacity = '';
+            } else {
+                newPasswordSubmitConfirm.setAttribute('disabled', 'disabled');
+                newPasswordDontMatchMessage.style.opacity = '1';
+
+            }
+        }
+
+        if (newPasswordInputs) {
+            newPasswordInputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    checkInputMatches();
+                });
+            });
+        }
+
     }
 
     initCustoms();

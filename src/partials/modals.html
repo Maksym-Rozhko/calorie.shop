@@ -402,11 +402,69 @@
                     </svg>
                     <span class="form-incorrect">*Incorrect password</span>
                 </label>
+                <button type="button" class="btn-reset enter-password__forgot" data-graph-path="forgot-password">
+                    Forgot password?
+                </button>
                 <div class="confirm-transfer__btns-group transfer-btns">
                     <button type="button" class="btn-reset transfer-btns__btn transfer-btns__btn--close graph-modal-close" aria-label="Закрыть модальное окно">
                         Cancel
                     </button>
                     <button type="submit" class="btn-reset transfer-btns__btn transfer-btns__btn--confirm">
+                        Сonfirm
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="graph-modal__container forgot-password import" role="dialog" aria-modal="true" data-graph-target="forgot-password">
+        <div class="graph-modal__content balance-nft">
+            <h3 class="confirm-transfer__title">
+                Enter your seed phrase
+            </h3>
+            <form action="#" class="form">
+                <div class="import__items">
+                    <div class="import__item">
+                        <input type="text" class="form__input" placeholder="Key 1" required>
+                        <input type="text" class="form__input" placeholder="Key 2" required>
+                        <input type="text" class="form__input" placeholder="Key 3" required>
+                        <input type="text" class="form__input" placeholder="Key 4" required>
+                        <input type="text" class="form__input" placeholder="Key 5" required>
+                        <input type="text" class="form__input" placeholder="Key 6" required>
+                        <input type="text" class="form__input" placeholder="Key 7" required>
+                        <input type="text" class="form__input" placeholder="Key 8" required>
+                        <input type="text" class="form__input" placeholder="Key 9" required>
+                        <input type="text" class="form__input" placeholder="Key 10" required>
+                        <input type="text" class="form__input" placeholder="Key 11" required>
+                        <input type="text" class="form__input" placeholder="Key 12" required>
+                    </div>
+                </div>
+                <button type="button" class="btn-reset graph-modal__btn-next graph-modal-close" disabled data-graph-path="new-password">
+                    Next
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="graph-modal__container confirm-transfer enter-password new-password" role="dialog" aria-modal="true" data-graph-target="new-password">
+        <div class="graph-modal__content balance-nft">
+            <h3 class="confirm-transfer__title">
+                Enter your wallet password
+            </h3>
+            <form action="#" class="form">
+                <label class="form__label form__label--password">
+                    <input type="password" class="form__input input-password" placeholder="Enter your password" required="">
+                    <svg class="icon">
+                        <use xlink:href="images/sprite.svg#lock"></use>
+                    </svg>
+                </label>
+                <label class="form__label form__label--password">
+                    <input type="password" class="form__input input-password-confirm" placeholder="Confirm new password" required="">
+                    <svg class="icon">
+                        <use xlink:href="images/sprite.svg#lock"></use>
+                    </svg>
+                    <span class="form-incorrect">*Passwords don't match</span>
+                </label>
+                <div class="confirm-transfer__btns-group transfer-btns">
+                    <button type="submit" disabled class="btn-reset transfer-btns__btn transfer-btns__btn--confirm">
                         Сonfirm
                     </button>
                 </div>

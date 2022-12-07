@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (seedPhraseNextBtn) {
             seedPhraseNextBtn.addEventListener('click', () => {
+                seedPhraseModalCopy = '';
                 seedPhraseList.forEach(li => seedPhraseModalCopy += `${li.textContent} `);
             });
         }
@@ -98,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (seedPhraseWords) {
             seedPhraseWords.forEach((word, i) => {
                 word.addEventListener('click', () => {
-                    console.log(seedPhraseModalCopy);
                     if (seedPhraseModalCopy.split(' ')[indexPhraseWords] === word.textContent) {
                         indexPhraseWords++;
                         word.classList.add('word-choosed');
@@ -261,12 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const importItemsInput = document.querySelectorAll('.import .import__items .import__item .form__input');
         const importWalletNextStepBtn = document.querySelector('.import .graph-modal__btn-next');
 
-
-        function checkEmptyInput(inputs) {
-            inputs.forEach(input => input.value !== '' ? importWalletNextStepBtn.removeAttribute('disabled') : importWalletNextStepBtn.setAttribute('disabled', 'disabled'));
-        }
-
         if (importItemsInput) {
+            function checkEmptyInput(inputs) {
+                inputs.forEach(input => input.value !== '' ? importWalletNextStepBtn.removeAttribute('disabled') : importWalletNextStepBtn.setAttribute('disabled', 'disabled'));
+            }
+
             importItemsInput.forEach((input, i) => {
                 input.addEventListener('input', () => {
                     let importPhrase = input.value;
@@ -299,25 +298,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const newPasswordDontMatchMessage = document.querySelector('.new-password .form__label--password .form-incorrect');
         const newPasswordSubmitConfirm = document.querySelector('.new-password .transfer-btns__btn--confirm');
 
-        function checkInputMatches() {
-            if (newPasswordInput.value === newPasswordConfirmInput.value) {
-                newPasswordSubmitConfirm.removeAttribute('disabled');
-                newPasswordDontMatchMessage.style.opacity = '';
-            } else {
-                newPasswordSubmitConfirm.setAttribute('disabled', 'disabled');
-                newPasswordDontMatchMessage.style.opacity = '1';
-
-            }
-        }
-
         if (newPasswordInputs) {
+
+            function checkInputMatches() {
+                if (newPasswordInput.value === newPasswordConfirmInput.value) {
+                    newPasswordSubmitConfirm.removeAttribute('disabled');
+                    newPasswordDontMatchMessage.style.opacity = '';
+                } else {
+                    newPasswordSubmitConfirm.setAttribute('disabled', 'disabled');
+                    newPasswordDontMatchMessage.style.opacity = '1';
+
+                }
+            }
+
             newPasswordInputs.forEach(input => {
                 input.addEventListener('input', () => {
                     checkInputMatches();
                 });
             });
         }
-
     }
 
     initCustoms();

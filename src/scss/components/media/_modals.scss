@@ -124,24 +124,24 @@
                 }
             }
         }
-        .import {
-            padding: 60px 30px;
+        // .import {
+        //     padding: 60px 30px;
 
-            &__item {
-                grid-template-columns: 1fr 1fr;
-            }
-            .form {
-                &__input {
-                    width: 100%;
-                }
-            }
-        }
-        &__btn-text {
-            &::after {
-                width: 35px;
-                height: 35px;
-            }
-        }
+        //     &__item {
+        //         grid-template-columns: 1fr 1fr;
+        //     }
+        //     .form {
+        //         &__input {
+        //             width: 100%;
+        //         }
+        //     }
+        // }
+        // &__btn-text {
+        //     &::after {
+        //         width: 35px;
+        //         height: 35px;
+        //     }
+        // }
     }
 }
 

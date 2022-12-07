@@ -258,13 +258,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        const importItemsInput = document.querySelectorAll('.import .import__items .import__item .form__input');
-        const importWalletNextStepBtn = document.querySelector('.import .graph-modal__btn-next');
+        const importItemsInput = document.querySelectorAll('.restore-password .import__item .import__input');
+        const importVisibleBtns = document.querySelectorAll('.restore-password .import__visible');
+        // const importWalletNextStepBtn = document.querySelector('.restore-password .graph-modal__btn-next');
 
         if (importItemsInput) {
-            function checkEmptyInput(inputs) {
-                inputs.forEach(input => input.value !== '' ? importWalletNextStepBtn.removeAttribute('disabled') : importWalletNextStepBtn.setAttribute('disabled', 'disabled'));
-            }
+            // function checkEmptyInput(inputs) {
+            //     inputs.forEach(input => input.value !== '' ? importWalletNextStepBtn.removeAttribute('disabled') : importWalletNextStepBtn.setAttribute('disabled', 'disabled'));
+            // }
 
             importItemsInput.forEach((input, i) => {
                 input.addEventListener('input', () => {
@@ -284,10 +285,17 @@ document.addEventListener('DOMContentLoaded', () => {
                                 input.value = importPhrase[i] ? importPhrase[i] : '';
                             });
 
-                            checkEmptyInput(importItemsInput);
+                            // checkEmptyInput(importItemsInput);
                         }
                     });
-                    checkEmptyInput(importItemsInput);
+                    // checkEmptyInput(importItemsInput);
+                });
+            });
+
+            importVisibleBtns.forEach((btn, i) => {
+                btn?.addEventListener('click', () => {
+                    btn.classList.toggle('import__visible--show');
+                    importItemsInput[i].setAttribute('type', `${btn.classList.contains('import__visible--show') ? 'text' : 'password'}`);
                 });
             });
         }
@@ -296,18 +304,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const newPasswordInput = document.querySelector('.new-password .form__input.input-password');
         const newPasswordConfirmInput = document.querySelector('.new-password .form__input.input-password-confirm');
         const newPasswordDontMatchMessage = document.querySelector('.new-password .form__label--password .form-incorrect');
-        const newPasswordSubmitConfirm = document.querySelector('.new-password .transfer-btns__btn--confirm');
+        const newPasswordSubmitConfirm = document.querySelector('.restore-password .restore-password__confirm-btn');
 
         if (newPasswordInputs) {
 
             function checkInputMatches() {
                 if (newPasswordInput.value === newPasswordConfirmInput.value) {
                     newPasswordSubmitConfirm.removeAttribute('disabled');
+                    newPasswordSubmitConfirm.style.pointerEvents = '';
                     newPasswordDontMatchMessage.style.opacity = '';
                 } else {
                     newPasswordSubmitConfirm.setAttribute('disabled', 'disabled');
+                    newPasswordSubmitConfirm.style.pointerEvents = 'all';
                     newPasswordDontMatchMessage.style.opacity = '1';
-
                 }
             }
 

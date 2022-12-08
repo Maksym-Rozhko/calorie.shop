@@ -57,11 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const seedPhraseList = document.querySelectorAll('.seed-phrase .seed-phrase__list li');
         const seedPhraseBtnCopy = document.querySelector('.seed-phrase .seed-phrase__copy');
         const seedPhraseNextBtn = document.querySelector('.seed-phrase .graph-modal__btn-next');
+        const seedPhrasePasswordInput = document.querySelector('.seed-phrase-page .form__input');
         let seedPhraseModalCopy = '';
 
         if (seedPhraseBtnCopy) {
             seedPhraseBtnCopy.addEventListener('click', () => {
                 let seedPhrase = '';
+                seedPhrasePasswordInput.value = '';
 
                 seedPhraseList.forEach(li => {
                     seedPhrase += `${li.textContent} `;
@@ -82,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (seedPhraseNextBtn) {
             seedPhraseNextBtn.addEventListener('click', () => {
                 seedPhraseModalCopy = '';
+                seedPhrasePasswordInput.value = '';
                 seedPhraseList.forEach(li => seedPhraseModalCopy += `${li.textContent} `);
             });
         }

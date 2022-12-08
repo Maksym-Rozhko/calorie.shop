@@ -260,6 +260,7 @@
                 color: var(--grey);
                 padding-left: 33px;
                 position: relative;
+                outline: transparent;
                 transition: color ease-in-out .4s;
 
                 &::before {
@@ -513,6 +514,7 @@
                 margin-right: auto;
                 margin-top: 50px;
                 transition: all ease-in-out 0.4s;
+                outline: transparent;
                 position: relative;
 
                 span {

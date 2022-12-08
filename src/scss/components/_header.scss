@@ -2,7 +2,7 @@ body.sidebar-offset {
     .header {
         margin-left: 285px;
         margin-right: 30px;
-    }  
+    }
   }
 
 .header {
@@ -103,7 +103,7 @@ body.sidebar-offset {
 
     .profile {
         position: relative;
-        
+
         &__wrap {
             @include flex-v-center;
             padding-right: 14px;
@@ -123,7 +123,7 @@ body.sidebar-offset {
                 transform-origin: center;
                 transition: all ease-in-out .4s;
             }
-        
+
             &:hover {
                 &::before {
                     border-color: var(--orange) transparent transparent transparent;
@@ -137,7 +137,7 @@ body.sidebar-offset {
             height: 40px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 10px; 
+            margin-right: 10px;
             @include flex-all-center;
 
             .avatar {
@@ -149,7 +149,7 @@ body.sidebar-offset {
             font-weight: 500;
             font-size: 14px;
             line-height: 21px;
-            letter-spacing: -0.03em;    
+            letter-spacing: -0.03em;
             color: var(--grey);
         }
 
@@ -184,7 +184,7 @@ body.sidebar-offset {
                 line-height: 100%;
                 letter-spacing: -0.05em;
                 color: var(--grey);
-                padding: 10px 5px;
+                padding: 0 5px;
                 transition: color ease-in-out 0.4s;
 
                 &:hover {
@@ -205,7 +205,7 @@ body.sidebar-offset {
     .burger {
         @include burger;
     }
-    
+
     .mobile-menu {
         @include mobile-menu;
     }
@@ -231,31 +231,13 @@ body.sidebar-offset {
             right: 2px;
             transform: translateY(-50%);
         }
-        
+
         &__amount {
             font-weight: 400;
             font-size: 12px;
             line-height: 18px;
             color: var(--cs-grey);
             padding-right: 19px;
-        }
-    }
-
-    &__mobile-top {
-        display: none;
-        margin-bottom: 16px;
-
-        .time {
-            font-weight: 400;
-            font-size: 10.7165px;
-            line-height: 13px;
-            letter-spacing: -0.035em;
-            color: var(--cs-white);
-        }
-
-        .mobile-info {
-            @include flex-v-center;
-            gap: 10px;
         }
     }
 }

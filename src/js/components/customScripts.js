@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         $("#slider-range").slider({
             range: true,
+            // step : 0.001,
             min: $('#slider-range').data('range-min'),
             max: $('#slider-range').data('range-max'),
             values: [$('#slider-range').data('range-selected-min'), $('#slider-range').data('range-selected-max')],
@@ -53,6 +54,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 hideCatalogFilter();
             });
         }
+
+        const customTabs = (btnSelectors, contentSelectors, activeClass) => {
+            const btns = document.querySelectorAll(btnSelectors);
+            const contents = document.querySelectorAll(contentSelectors);
+
+            const removeBtnsActiveClass = () => btns.forEach(btn => btn.classList.remove(activeClass));
+            const removeContentsActiveClass = () => contents.forEach(content => content.classList.add('d-none'));
+            const removeWalletTabsActiveContent = () => contents.forEach(content => content.classList.remove('balance__block--show'));
+
+            if (btns) {
+                btns.forEach((btn, i) => {
+                    btn.addEventListener('click', () => {
+                        if (!contents[i]) return;
+                        if (btn.dataset.catalog === contents[i].id) {
+                            removeBtnsActiveClass();
+                            btn.classList.add(activeClass);
+
+                            if (!btn.classList.contains('create-wallet__tabs-btn')) {
+                                removeContentsActiveClass();
+                                contents[i].classList.remove('d-none');
+                            } else {
+                                removeWalletTabsActiveContent();
+                                contents[i].classList.add('balance__block--show');
+                            }
+                        }
+                    });
+                });
+            }
+        }
+
+        customTabs('.shop .shop-tabs__tab', '.shop .catalog', 'shop-tabs__tab--active');
+        customTabs('.wallet .create-wallet__btn', '.wallet .create-wallet__content', 'create-wallet__btn--active');
+        customTabs('.wallet .create-wallet__tabs-btn', '.wallet .balance__block', 'create-wallet__tabs-btn--active');
 
         const seedPhraseList = document.querySelectorAll('.seed-phrase .seed-phrase__list li');
         const seedPhraseBtnCopy = document.querySelector('.seed-phrase .seed-phrase__copy');
@@ -328,6 +362,43 @@ document.addEventListener('DOMContentLoaded', () => {
                     checkInputMatches();
                 });
             });
+        }
+
+        const regCirilic = /[а-яА-ЯёЁ]/g;
+        const regOnlyAbc = /[^a-z\s]/gi;
+        const inputPasswords = document.querySelectorAll('input[type="password"');
+        const inputProfileName = document.querySelectorAll('.profile-page .form__label--name .form__input');
+
+        function banCirilicLetters(inputs) {
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    if (input.value.search(regCirilic) !=  -1) {
+                        input.value = input.value.replace(regCirilic, '');
+                    }
+                });
+            });
+        }
+
+        function checkOnlyAbc(inputs) {
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    if (input.value.search(regOnlyAbc) !=  -1) {
+                        input.value = input.value.replace(regOnlyAbc, '');
+                    }
+                });
+            });
+        }
+
+
+        banCirilicLetters(inputPasswords);
+        checkOnlyAbc(inputProfileName);
+
+        const walletAccountCode = document.querySelector('.create-wallet .account-number__code');
+
+        if (walletAccountCode) {
+            if (window.innerWidth < 575 && walletAccountCode.textContent.length >= 29) {
+                walletAccountCode.textContent = walletAccountCode.textContent.replace(walletAccountCode.textContent.slice(29), '...');
+            }
         }
     }
 

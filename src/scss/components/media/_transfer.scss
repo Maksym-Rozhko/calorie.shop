@@ -90,6 +90,7 @@
 
 @include mobile {
     .transfer-page {
+        padding-bottom: 100px;
         &__container {
             padding: 0;
             background: transparent;
@@ -115,7 +116,7 @@
             }
 
             &__fee {
-                margin-bottom: 230px;
+                margin-bottom: 100px;
             }
         }
     }

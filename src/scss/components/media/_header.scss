@@ -3,7 +3,7 @@
         .header {
             margin-left: inherit;
             margin-right: inherit;
-        }  
+        }
     }
 }
 
@@ -42,9 +42,6 @@
         }
         .coins {
             display: block;
-        }
-        &__mobile-top {
-            @include flex-all-sb;
         }
     }
 }

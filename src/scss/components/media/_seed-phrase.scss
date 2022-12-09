@@ -8,6 +8,7 @@
 
 @include mobile {
     .seed-phrase-page {
+        padding-bottom: 100px;
         &__container {
             background: transparent;
             backdrop-filter: none;

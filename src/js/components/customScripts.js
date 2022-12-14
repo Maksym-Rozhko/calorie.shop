@@ -416,18 +416,20 @@ document.addEventListener('DOMContentLoaded', () => {
 $(document).on('pjax:complete', function(event) {
     initCustoms();
 
-    const seedPhraseList = document.querySelectorAll('.seed-phrase .seed-phrase__list li');
-    let seedPhraseModalCopy = '';
-    const seedPhraseWordsInput = document.querySelector('.seed-phrase-page .form__seed-phrase-input');
-    const seedPhraseWordsSubmitBtn = document.querySelector('.seed-phrase-page .form .form__submit');
+    try {
+        const seedPhraseList = document.querySelectorAll('.seed-phrase .seed-phrase__list li');
+        let seedPhraseModalCopy = '';
+        const seedPhraseWordsInput = document.querySelector('.seed-phrase-page .form__seed-phrase-input');
+        const seedPhraseWordsSubmitBtn = document.querySelector('.seed-phrase-page .form .form__submit');
 
-    seedPhraseList.forEach(li => seedPhraseModalCopy += `${li.textContent} `);
+        seedPhraseList.forEach(li => seedPhraseModalCopy += `${li.textContent} `);
 
-    if (seedPhraseWordsInput.value.trim() === seedPhraseModalCopy.trim()) {
-        seedPhraseWordsSubmitBtn.classList.add('submit-active');
-        seedPhraseWordsSubmitBtn.removeAttribute('disabled');
-    } else {
-        seedPhraseWordsSubmitBtn.classList.remove('submit-active');
-        seedPhraseWordsSubmitBtn.setAttribute('disabled', 'disabled');
-    }
+        if (seedPhraseWordsInput.value.trim() === seedPhraseModalCopy.trim()) {
+            seedPhraseWordsSubmitBtn.classList.add('submit-active');
+            seedPhraseWordsSubmitBtn.removeAttribute('disabled');
+        } else {
+            seedPhraseWordsSubmitBtn.classList.remove('submit-active');
+            seedPhraseWordsSubmitBtn.setAttribute('disabled', 'disabled');
+        }
+    } catch (error) {}
 });

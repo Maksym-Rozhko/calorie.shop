@@ -249,5 +249,12 @@
                 }
             }
         }
+        .balance {
+            .account-number {
+                &__code-clone {
+                    max-width: 120px;
+                }
+            }
+        }
     }
 }

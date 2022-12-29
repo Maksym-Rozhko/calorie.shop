@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shopFilterCloseTrigger.classList.add('d-none');
             shopControllsWrapper.style.opacity = null;
             shopCatalogContainer.forEach(catalog => catalog.style.opacity = null);
+            document.querySelector('body').style.overflow = '';
         }
 
         if (shopFilterTrigger) {
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 shopFilterContentWrapper.classList.add('shop-filter--active');
                 shopFilterCloseTrigger.classList.remove('d-none');
                 shopControllsWrapper.style.opacity = '0';
+                document.querySelector('body').style.overflow = 'hidden';
                 shopCatalogContainer.forEach(catalog => catalog.style.opacity = '0');
             });
 
@@ -402,10 +404,15 @@ document.addEventListener('DOMContentLoaded', () => {
         checkOnlyAbc(inputProfileName);
 
         const walletAccountCode = document.querySelector('.create-wallet .account-number__code');
+        const walletAccountCodeWrapper = document.querySelector('.create-wallet .balance__account .account-number__info');
 
         if (walletAccountCode) {
             if (window.innerWidth < 575 && walletAccountCode.textContent.length >= 29) {
-                walletAccountCode.textContent = walletAccountCode.textContent.replace(walletAccountCode.textContent.slice(29), '...');
+                let cloneElem = walletAccountCode.cloneNode(true);
+                cloneElem.classList.replace('account-number__code', 'account-number__code-clone');
+                walletAccountCode.classList.add('d-none');
+                walletAccountCodeWrapper.insertAdjacentElement('afterbegin', cloneElem);
+                cloneElem.textContent = cloneElem.textContent.replace(walletAccountCode.textContent.slice(29), '...');
             }
         }
     }

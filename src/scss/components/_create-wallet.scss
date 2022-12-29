@@ -177,11 +177,20 @@
                 color: var(--grey);
             }
 
-            &__code {
+            &__code,
+            &__code-clone {
                 font-weight: 500;
                 font-size: 14px;
                 line-height: 170%;
                 color: rgba(234, 235, 240, 0.3);
+            }
+
+            &__code-clone {
+                max-width: 150px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                margin-left: auto;
             }
 
             &__info {

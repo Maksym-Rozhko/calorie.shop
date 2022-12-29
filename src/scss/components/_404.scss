@@ -1,0 +1,86 @@
+.error-page {
+    background-image: url('../images/error-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    @include flex-v-center;
+
+    &__container {
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 125%;
+        text-align: center;
+        letter-spacing: -0.05em;
+        color: var(--grey);
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 80px;
+        line-height: 100%;
+        text-align: center;
+        letter-spacing: -0.05em;
+        color: var(--grey);
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 170%;
+        text-align: center;
+        color: var(--cs-white);
+        opacity: 0.5;
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+
+    &__link {
+        display: block;
+        max-width: fit-content;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.03em;
+        color: var(--grey);
+        padding-right: 55px;
+        position: relative;
+        margin: 0 auto;
+        opacity: 1;
+        transition: all ease-in-out .4s;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: var(--orange);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: url('../images/icon/arrow-white.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
+            @include flex-all-center;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all ease-in-out .4s;
+        }
+
+        &:hover {
+            &::after {
+                transform: translateY(-50%) translateX( 10px);
+            }
+        }
+    }
+}

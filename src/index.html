@@ -9,13 +9,20 @@
     @include('partials/header.html')
     <main class="main">
         @include('partials/sidebar.html')
-        <!-- @include('partials/shop.html') -->
+        @include('partials/shop.html')
         <!-- @include('partials/auth.html') -->
         <!-- @include('partials/wallet.html') -->
-        @include('partials/profile.html')
+        <!-- @include('partials/profile.html') -->
+        <!-- @include('partials/404.html') -->
+        <butto type="button" class="scroll-top">
+            <svg class="icon" width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="17.5" cy="17.5" r="17" transform="rotate(-90 17.5 17.5)" stroke="currentColor"/>
+                <path d="M17.6464 10.6464C17.8417 10.4512 18.1583 10.4512 18.3536 10.6464L21.5355 13.8284C21.7308 14.0237 21.7308 14.3403 21.5355 14.5355C21.3403 14.7308 21.0237 14.7308 20.8284 14.5355L18 11.7071L15.1716 14.5355C14.9763 14.7308 14.6597 14.7308 14.4645 14.5355C14.2692 14.3403 14.2692 14.0237 14.4645 13.8284L17.6464 10.6464ZM17.5 23L17.5 11L18.5 11L18.5 23L17.5 23Z" fill="currentColor"/>
+            </svg>
+        </butto>
     </main>
     @include('partials/footer.html')
-    <!-- @include('partials/modals.html') -->
+    @include('partials/modals.html')
 
 </body>
 

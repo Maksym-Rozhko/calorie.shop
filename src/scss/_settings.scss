@@ -137,6 +137,25 @@ body {
   display: none !important;
 }
 
+.scroll-top {
+    border: none;
+    background: transparent;
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    cursor: pointer;
+    transition: all ease-in-out .4s;
+
+    .icon {
+        color: var(--orange);
+        fill: var(--dark);
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
 ::-webkit-scrollbar {width: 4px;height: 4px;}
 ::-webkit-scrollbar-track-piece {background:var(--cs-grey);}
 ::-webkit-scrollbar-thumb:vertical {
@@ -173,5 +192,8 @@ body {
 @include mobile {
   .main {
     margin-top: 100px;
+  }
+  .scroll-top {
+    right: 50px;
   }
 }
